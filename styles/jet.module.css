@@ -1,0 +1,7 @@
+.jet{
+    transition: all 10s ease;
+    background-color: aqua;
+}
+.error{
+    display: none;
+}
