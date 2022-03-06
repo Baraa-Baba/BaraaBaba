@@ -33,7 +33,7 @@ const Myname = () => {
             element: document.querySelector('body'),
             engine: engine,
             options: {
-                width: width * 2,
+                width: width,
                 height: height,
                 wireframes: false
             }
