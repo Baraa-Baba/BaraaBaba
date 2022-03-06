@@ -18,9 +18,15 @@
         transform: translateY(1rem);
     }
 }
+html{
+    max-width:100vw;
+}
+
 body{
     scroll-behavior: smooth;
+    overflow: hidden;
 }
+
 .space{
     background-image: url(../assets/star.svg);
     background-repeat: 7;

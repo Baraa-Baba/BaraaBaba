@@ -44,6 +44,11 @@ const Myname = () => {
         Render.run(render);
         var runner = Runner.create();
         var isnotplay = false
+        if (width < 800) {
+            var scale = 0.5
+        } else {
+            var scale = 1
+        }
 
         var url
         for (var i = 1; i < 27; i++) {
@@ -59,16 +64,16 @@ const Myname = () => {
             /*V*/ i == 20 ? url = 'https://i.ibb.co/7CfFfsB/20.png' : null
              /*L*/ i == 22 ? url = 'https://i.ibb.co/T13FtxR/22.png' : null
              /*P*/ i == 24 ? url = 'https://i.ibb.co/JCL187K/24.png' : null
-            let letter = Matter.Bodies.rectangle(40 + X, 200 + Y, 80, 80, {
+            let letter = Matter.Bodies.rectangle((40 + X) * scale, 200 + Y, 80 * scale, 80 * scale, {
                 friction: 0.3,
-                torque: 1,
+                torque: 0,
                 isStatic: isnotplay,//changing isnotplay later doesn't afect it
                 render: {
                     fillStyle: 'blue',
                     sprite: {
                         texture: url,
-                        xScale: 1,
-                        yScale: 1,
+                        xScale: scale,
+                        yScale: scale,
                     }
                 }
             })
@@ -79,20 +84,16 @@ const Myname = () => {
             if (i == 5 || i === 9 || i === 17) {
                 //space between sentence
                 Y += 100
-                X = 0
+                X = 30
+            }
+            if (i == 1) {
+                X = 40
             }
             Matter.World.add(engine.world, letter);
         }
-        engine.gravity.scale = 0
-        document.getElementById('disable-gravity').addEventListener('click', () => {
-            engine.gravity.scale = 0.001
-            isnotplay = false
-            engine.gravity.y = -1
-            alert('hello')
-            Matter.Engine.update(engine.world)
-            Matter.Runner.run(engine)
-            Matter.Render.run(render);
-        })
+        engine.gravity.scale = 0.00001
+        engine.enableSleeping = true
+        Matter.Sleeping = true
         Matter.World.add(engine.world, [
             Matter.Bodies.rectangle(width / 2, height * 2, width, height * 2, { isStatic: true }),
             Matter.Bodies.rectangle(width / 2, -height / 2 + 50, width, height * 0.75, { isStatic: true }),
@@ -116,7 +117,6 @@ const Myname = () => {
     return (
         <>
             <Script src='./matter.js' strategy='beforeInteractive' />
-            <input type="button" value="disable gravity" id="disable-gravity" />
         </>
     );
 }

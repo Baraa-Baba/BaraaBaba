@@ -1,11 +1,19 @@
 import Image from 'next/image'
-import jet from '../assets/jet.png'
+import jett from '../assets/jet.png'
 import fire from '../assets/firefromjet.png'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ControlButtons from './ControlButtons'
 const Jet = () => {
-    const [jetX, setjetX] = useState(400)
-    const [jetY, setjetY] = useState(400)
+    const [jetX, setjetX] = useState(0)
+    const [jetY, setjetY] = useState(0)
+    const jet = useRef(0)
+    useEffect(() => {
+        if (innerWidth > 800) {
+            setjetX(430)
+            setjetY(10)
+
+        }
+    }, [])
     function left() {
         event.preventDefault();
         document.getElementById('jet-body').style.transform = 'rotate(' + (270) + 'deg)'
@@ -97,11 +105,11 @@ const Jet = () => {
     return (
         <>
             {/*added this div just to use postion relative */}
-            <div className='fixed ' id="jet">
+            <div className='fixed ' id="jet" ref={jet}>
                 {/* added div cause Image can't have styles and img don't work*/}
                 <div id='jet-body' className='me '>
                     <div className='float' id="float">
-                        <Image src={jet} />
+                        <Image src={jett} />
                     </div>
                 </div>
                 <div id="jetfire" className='absolute hidden top-52 z-[-2] right-12'>
