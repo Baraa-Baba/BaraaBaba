@@ -11,29 +11,27 @@ const Jet = () => {
         if (innerWidth > 800) {
             setjetX(430)
             setjetY(10)
-
+        } else {
+            setjetX(200)
+            setjetY(100)
         }
     }, [])
     function left() {
         event.preventDefault();
-        document.getElementById('jet-body').style.transform = 'rotate(' + (270) + 'deg)'
+        document.getElementById('jet-body').style.transform = 'rotate(' + (-25) + 'deg)'
         document.getElementById('float').style.animation = "unset"
         const jet_style = getComputedStyle(document.getElementById('jet'))
         if (parseInt(jet_style.left) + jetX > 0) {
             setjetX(jetX - 10)
-            document.getElementById('jet').style.transform =
-                "translateY(" + (jetY) + "px) translateX(" + (jetX) + "px)"
         }
     }
     function right() {
         event.preventDefault();
         const jet_style = getComputedStyle(document.getElementById('jet'))
         document.getElementById('float').style.animation = "unset"
-        document.getElementById('jet-body').style.transform = 'rotate(' + (90) + 'deg)'
+        document.getElementById('jet-body').style.transform = 'rotate(' + (25) + 'deg)'
         if (parseInt(jet_style.right) - jetX > 0) {
             setjetX(jetX + 10)
-            document.getElementById('jet').style.transform =
-                "translateY(" + (jetY) + "px) translateX(" + (jetX) + "px)"
         }
     }
     function down() {
@@ -43,24 +41,23 @@ const Jet = () => {
         document.getElementById('jet-body').style.transform = 'rotate(' + (180) + 'deg)'
         if (parseInt(jet_style.bottom) - jetY > 0) {
             setjetY(jetY + 10)
-            document.getElementById('jet').style.transform =
-                "translateY(" + (jetY) + "px) translateX(" + (jetX) + "px)"
         } else {
             window.scrollBy({
                 top: 10,
                 left: 0,
             });
         }
+
     }
     function up() {
-        event.preventDefault();
+        if (typeof event !== 'undefined') {
+            event.preventDefault()
+        }
         document.getElementById('jet-body').style.transform = 'rotate(' + (0) + 'deg)'
         document.getElementById('float').style.animation = "unset"
         const jet_style = getComputedStyle(document.getElementById('jet'))
         if (parseInt(jet_style.top) - jetY < 0) {
             setjetY(jetY - 10)
-            document.getElementById('jet').style.transform =
-                "translateY(" + (jetY) + "px) translateX(" + (jetX) + "px) "
         } else {
             window.scrollBy({
                 top: -10,
@@ -102,10 +99,12 @@ const Jet = () => {
             document.removeEventListener('keyup', onKeyUp);
         }
     }, [jetX, jetY])
+
     return (
         <>
             {/*added this div just to use postion relative */}
-            <div className='fixed ' id="jet" ref={jet}>
+            <div role='jet' className='fixed' aria-label='the jet you gonna use to navgate the site use the arrow keys or contral buttons'
+                tabIndex={2} id="jet" ref={jet}>
                 {/* added div cause Image can't have styles and img don't work*/}
                 <div id='jet-body' className='me '>
                     <div className='float' id="float">
@@ -115,7 +114,18 @@ const Jet = () => {
                 <div id="jetfire" className='absolute hidden top-52 z-[-2] right-12'>
                     <Image src={fire} />
                 </div>
+                <style jsx>{`
+            #jet {
+                transform: translateY(${jetY}px) translateX(${jetX}px) scale(1);
+            }
+            @media only screen and (max-width: 800px){
+            #jet{
+                transform: translateY(${jetY}px) translateX(${jetX}px) scale(0.75); 
+            }}
+            `}</style>
             </div>
+            <ControlButtons up={up} jetY={jetY} setjetY={setjetY} jetX={jetX}
+                setjetX={setjetX} />
         </>
     )
 }

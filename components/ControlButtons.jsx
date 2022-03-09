@@ -1,15 +1,125 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 var clicked = false
-const ControlButtons = () => {
+const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
+    const [upiv, setupiv] = useState()
+    const [downiv, setdowniv] = useState()
+    const [rightiv, setrightiv] = useState()
+    const [leftiv, setleftiv] = useState()
 
+    var valueup
+    var valueright
+    function repeatup() {
+        valueup = jetY
+        document.getElementById('jet-body').style.transform = 'rotate(' + (0) + 'deg)'
+        document.getElementById('float').style.animation = "unset"
+        setupiv(setInterval(() => {
+            const jet_style = getComputedStyle(document.getElementById('jet'))
+            if (parseInt(jet_style.top) - valueup < 0) {
+                valueup -= 10
+                setjetY(valueup)
+            } else {
+                window.scrollBy({
+                    top: -10,
+                    left: 0,
+                });
+            }
+        }, 50))
+    }
+    function repeatdown() {
+        valueup = jetY
+        document.getElementById('jet-body').style.transform = 'rotate(' + (180) + 'deg)'
+        document.getElementById('float').style.animation = "unset"
+        setdowniv(setInterval(() => {
+            const jet_style = getComputedStyle(document.getElementById('jet'))
+            if (parseInt(jet_style.bottom) - valueup > 0) {
+                valueup += 10
+                setjetY(valueup)
+            } else {
+                window.scrollBy({
+                    top: 10,
+                    left: 0,
+                });
+            }
+        }, 50))
+    }
+    function repeatright() {
+        valueright = jetX
+        const jet_style = getComputedStyle(document.getElementById('jet'))
+        document.getElementById('float').style.animation = "unset"
+        document.getElementById('jet-body').style.transform = 'rotate(' + (25) + 'deg)'
+        setrightiv(
+            setInterval(() => {
+                if (parseInt(jet_style.right) - valueright > 0) {
+                    valueright += 10
+                    setjetX(valueright)
+                }
+            }, 50)
+        )
+    }
+    function repeatleft() {
+        valueright = jetX
+        const jet_style = getComputedStyle(document.getElementById('jet'))
+        document.getElementById('float').style.animation = "unset"
+        document.getElementById('jet-body').style.transform = 'rotate(' + (-25) + 'deg)'
+        setleftiv(
+            setInterval(() => {
+                if (parseInt(jet_style.left) - valueright < 0) {
+                    valueright -= 10
+                    setjetX(valueright)
+                }
+            }, 50)
+        )
+    }
     return (
-        <div className='conbuttons-cont'>
-            <div className="conbuttons" onClick={() => clicked = true}>
-                &#62;
-            </div>
-            <div className="conbuttons"></div>
-            <div className="conbuttons" id=''></div>
-            <div className="conbuttons"></div>
+        <div tabIndex={3} role='hold by space so the jet can move or use the arrow keys'
+            aria-label='hold by space or your finger so the jet can move  or use the arrow keys' className='conbuttons-cont'>
+            <button role="up" alt='up' aria-label='up'
+                onMouseDown={() => repeatup()} onMouseUp={() => {
+                    clearInterval(upiv)
+                    document.getElementById('float').style.animation = "float 3s linear infinite alternate"
+                }} onTouchStart={() => {
+                    repeatup()
+                }} onTouchEnd={() => {
+                    clearInterval(upiv)
+                    document.getElementById('float').style.animation = "float 3s linear infinite alternate"
+                }}
+                className="conbuttons block ml-auto mr-auto rotate-90 active:opacity-70" >
+                &#60;
+            </button>
+            <button aria-label='left'
+                onMouseDown={() => repeatleft()} onMouseUp={() => {
+                    clearInterval(leftiv)
+                    document.getElementById('float').style.animation = "float 3s linear infinite alternate"
+                }}
+                onTouchStart={() => {
+                    repeatleft()
+                }} onTouchEnd={() => {
+                    document.getElementById('float').style.animation = "float 3s linear infinite alternate"
+                    clearInterval(leftiv)
+                }}
+                className="conbuttons inline-block active:opacity-70">&#60;</button>
+            <button onMouseDown={() => repeatright()} onMouseUp={() => {
+                clearInterval(rightiv)
+                document.getElementById('float').style.animation = "float 3s linear infinite alternate"
+            }}
+                onTouchStart={() => {
+                    repeatright()
+                }} onTouchEnd={() => {
+                    clearInterval(rightiv)
+                    document.getElementById('float').style.animation = "float 3s linear infinite alternate"
+                }}
+                aria-label='right' className="conbuttons inline-block active:opacity-70" id=''>&#62;</button>
+            <button aria-label='down' className="conbuttons block ml-auto mr-auto rotate-[270deg]
+             active:opacity-70"
+                onMouseDown={() => repeatdown()} onMouseUp={() => {
+                    clearInterval(downiv)
+                    document.getElementById('float').style.animation = "float 3s linear infinite alternate"
+                }} onTouchStart={() => {
+                    repeatdown()
+                }} onTouchEnd={() => {
+                    clearInterval(downiv)
+                    document.getElementById('float').style.animation = "float 3s linear infinite alternate"
+                }}>&#60;</button>
         </div >
     )
 }
