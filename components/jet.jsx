@@ -15,7 +15,7 @@ const Jet = () => {
             setjetX(200)
             setjetY(100)
         } else if (innerWidth > 200) {
-            setjetX(75)
+            setjetX(100)
             setjetY(100)
         } else {
             setjetX(0)

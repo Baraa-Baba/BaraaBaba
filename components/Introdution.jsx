@@ -78,13 +78,13 @@ const Myname = () => {
             Matter.World.add(engine.world, letter);
         }
         if (innerWidth > 600) {
-            var tipX = 250
+            var tipX = innerWidth - 250
             var tipscale = 1
         } else {
-            var tipX = 300
+            var tipX = 200
             var tipscale = 0.75
         }
-        let tip = Matter.Bodies.rectangle(innerWidth - 250, 100, 80, 80, {
+        let tip = Matter.Bodies.rectangle(tipX, 100, 80, 80, {
             friction: 0.3,
             torque: 0,
             isStatic: true,

@@ -79,7 +79,7 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
                     clearInterval(upiv)
                     setTimeout(() => {
                         clearInterval(upiv)
-                    }, 2000)
+                    }, 4000)
                     document.getElementById('float').style.animation = "float 3s linear infinite alternate"
                 }} onTouchStart={() => {
                     repeatup()
@@ -89,7 +89,7 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
                     } else {
                         setTimeout(() => {
                             clearInterval(upiv)
-                        }, 2000)
+                        }, 4000)
                     }
                     document.getElementById('float').style.animation = "float 3s linear infinite alternate"
                 }}
