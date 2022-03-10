@@ -26,12 +26,13 @@ const Myname = () => {
                 wireframes: false
             }
         });
+
         var X = 0
         var Y = 0
         Render.run(render);
         var runner = Runner.create();
         var isnotplay = false
-        if (innerWidth < 800) {
+        if (width < 800) {
             var scale = 0.5
         } else {
             var scale = 1
@@ -76,12 +77,14 @@ const Myname = () => {
             }
             Matter.World.add(engine.world, letter);
         }
-        if (innerWidth > 400) {
+        if (innerWidth > 600) {
             var tipX = 250
+            var tipscale = 1
         } else {
-            var tipX = 0
+            var tipX = 300
+            var tipscale = 0.75
         }
-        let tip = Matter.Bodies.rectangle(innerWidth - tipX, 100, 80, 80, {
+        let tip = Matter.Bodies.rectangle(innerWidth - 250, 100, 80, 80, {
             friction: 0.3,
             torque: 0,
             isStatic: true,
@@ -89,8 +92,8 @@ const Myname = () => {
                 fillStyle: 'blue',
                 sprite: {
                     texture: 'https://i.ibb.co/vXmPbMv/Frame-1-1.png',
-                    xScale: 1,
-                    yScale: 1,
+                    xScale: tipscale,
+                    yScale: tipscale,
                 }
             }
         })
