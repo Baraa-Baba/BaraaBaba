@@ -74,12 +74,12 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
     return (
         <div tabIndex={3} role='hold by space so the jet can move or use the arrow keys'
             aria-label='hold by space or your finger so the jet can move  or use the arrow keys' className='conbuttons-cont'>
-            <button role="up" alt='up' aria-label='up'
+            <input type={'button'} value='<' role="up" alt='up' aria-label='up'
                 onMouseDown={(event) => repeatup(event)} onMouseUp={() => {
                     clearInterval(upiv)
                     setTimeout(() => {
                         clearInterval(upiv)
-                    }, 100)
+                    }, 2000)
                     document.getElementById('float').style.animation = "float 3s linear infinite alternate"
                 }} onTouchStart={() => {
                     repeatup()
@@ -89,19 +89,17 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
                     } else {
                         setTimeout(() => {
                             clearInterval(upiv)
-                        }, 4000)
+                        }, 2000)
                     }
                     document.getElementById('float').style.animation = "float 3s linear infinite alternate"
                 }}
-                className="conbuttons block ml-auto mr-auto rotate-90 active:opacity-70" >
-                &#60;
-            </button>
-            <button aria-label='left'
+                className="conbuttons block ml-auto mr-auto rotate-90 active:opacity-70 cursor-pointer" />
+            <input type={'button'} value='<' aria-label='left'
                 onMouseDown={() => repeatleft()} onMouseUp={() => {
                     clearInterval(leftiv)
                     setTimeout(() => {
                         clearInterval(leftiv)
-                    }, 100)
+                    }, 4000)
                     document.getElementById('float').style.animation = "float 3s linear infinite alternate"
                 }}
                 onTouchStart={() => {
@@ -111,14 +109,14 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
                     clearInterval(leftiv)
                     setTimeout(() => {
                         clearInterval(leftiv)
-                    }, 100)
+                    }, 4000)
                 }}
-                className="conbuttons inline-block active:opacity-70">&#60;</button>
-            <button onMouseDown={() => repeatright()} onMouseUp={() => {
+                className="conbuttons inline-block active:opacity-70" />
+            <input type={'button'} value='>' onMouseDown={() => repeatright()} onMouseUp={() => {
                 clearInterval(rightiv)
                 setTimeout(() => {
                     clearInterval(rightiv)
-                }, 100)
+                }, 4000)
                 document.getElementById('float').style.animation = "float 3s linear infinite alternate"
             }}
                 onTouchStart={() => {
@@ -127,11 +125,11 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
                     clearInterval(rightiv)
                     setTimeout(() => {
                         clearInterval(rightiv)
-                    }, 100)
+                    }, 4000)
                     document.getElementById('float').style.animation = "float 3s linear infinite alternate"
                 }}
-                aria-label='right' className="conbuttons inline-block active:opacity-70" id=''>&#62;</button>
-            <button aria-label='down' className="conbuttons block ml-auto mr-auto rotate-[270deg]
+                aria-label='right' className="conbuttons inline-block active:opacity-70" id='' />
+            <input type={'button'} value='<' aria-label='down' className="conbuttons block ml-auto mr-auto rotate-[270deg]
              active:opacity-70"
                 onMouseDown={() => repeatdown()} onMouseUp={() => {
                     if (typeof downiv !== 'undefined') {
@@ -141,16 +139,16 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
                             clearInterval(downiv)
                         }, 4000)
                     }
-                    document.getElementById('float').style.animation = "float 3s linear infinite alternate"
+                    document.getElementById('float').style.animation = "float 3s linear infinite alternate "
                 }} onTouchStart={() => {
                     repeatdown()
                 }} onTouchEnd={() => {
                     clearInterval(downiv)
                     setTimeout(() => {
                         clearInterval(downiv)
-                    }, 100)
+                    }, 4000)
                     document.getElementById('float').style.animation = "float 3s linear infinite alternate"
-                }}>&#60;</button>
+                }} />
         </div >
     )
 }
