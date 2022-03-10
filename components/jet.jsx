@@ -11,8 +11,11 @@ const Jet = () => {
         if (innerWidth > 800) {
             setjetX(430)
             setjetY(10)
-        } else {
+        } else if (innerWidth > 400) {
             setjetX(200)
+            setjetY(100)
+        } else {
+            setjetX(innerWidth)
             setjetY(100)
         }
     }, [])

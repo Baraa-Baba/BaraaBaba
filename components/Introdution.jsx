@@ -1,4 +1,3 @@
-import Script from 'next/script'
 import { useEffect } from 'react'
 import Matter from './matter.js'
 const Myname = () => {
@@ -22,18 +21,17 @@ const Myname = () => {
             element: document.querySelector('body'),
             engine: engine,
             options: {
-                width: width,
-                height: height,
+                width: innerWidth,
+                height: innerHeight,
                 wireframes: false
             }
         });
-
         var X = 0
         var Y = 0
         Render.run(render);
         var runner = Runner.create();
         var isnotplay = false
-        if (width < 800) {
+        if (innerWidth < 800) {
             var scale = 0.5
         } else {
             var scale = 1
@@ -78,7 +76,12 @@ const Myname = () => {
             }
             Matter.World.add(engine.world, letter);
         }
-        let tip = Matter.Bodies.rectangle(innerWidth - 250, 100, 80, 80, {
+        if (innerWidth > 400) {
+            var tipX = 250
+        } else {
+            var tipX = 0
+        }
+        let tip = Matter.Bodies.rectangle(innerWidth - tipX, 100, 80, 80, {
             friction: 0.3,
             torque: 0,
             isStatic: true,
@@ -167,7 +170,6 @@ const Myname = () => {
 
     return (
         <div tabIndex={1} aria-label="Baraa Baba frontend developer">
-            <Script src='./matter.js' strategy='beforeInteractive' />
         </div>
     );
 }
