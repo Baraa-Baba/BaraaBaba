@@ -10,40 +10,49 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
     var valueright
     function repeatup(event) {
         console.log(event)
+        clearInterval(downiv)
+        clearInterval(rightiv)
+        clearInterval(leftiv)
         valueup = jetY
         document.getElementById('jet-body').style.transform = 'rotate(' + (0) + 'deg)'
         document.getElementById('float').style.animation = "unset"
         setupiv(setInterval(() => {
             const jet_style = getComputedStyle(document.getElementById('jet'))
             if (parseInt(jet_style.top) - valueup < 0) {
-                valueup -= 10
+                valueup -= 15
                 setjetY(valueup)
             } else {
                 window.scrollBy({
-                    top: -10,
+                    top: -15,
                     left: 0,
                 });
             }
         }, 50))
     }
     function repeatdown() {
+        clearInterval(upiv)
+        clearInterval(rightiv)
+        clearInterval(leftiv)
         valueup = jetY
         document.getElementById('jet-body').style.transform = 'rotate(' + (180) + 'deg)'
         document.getElementById('float').style.animation = "unset"
         setdowniv(setInterval(() => {
             const jet_style = getComputedStyle(document.getElementById('jet'))
             if (parseInt(jet_style.bottom) - valueup > 0) {
-                valueup += 10
+                valueup += 15
                 setjetY(valueup)
             } else {
                 window.scrollBy({
-                    top: 10,
+                    top: 15,
                     left: 0,
                 });
             }
         }, 50))
     }
     function repeatright() {
+        clearInterval(upiv)
+        clearInterval(downiv)
+        clearInterval(leftiv)
         valueright = jetX
         const jet_style = getComputedStyle(document.getElementById('jet'))
         document.getElementById('float').style.animation = "unset"
@@ -58,6 +67,9 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
         )
     }
     function repeatleft() {
+        clearInterval(upiv)
+        clearInterval(downiv)
+        clearInterval(rightiv)
         valueright = jetX
         const jet_style = getComputedStyle(document.getElementById('jet'))
         document.getElementById('float').style.animation = "unset"
