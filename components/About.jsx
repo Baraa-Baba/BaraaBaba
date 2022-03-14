@@ -3,10 +3,10 @@ const About = () => {
 
   return (
     <div className="max-w-[100vw]">
-      <h2 className="About-head" id="color1"><h1>About me</h1></h2>
-      <Card img={'bg-card'} header={'Baraa'} text={"Iam Baraa a 15 years old from Lebanon. I love programming and Iam a self taught frontend developer."} />
-      <Card img={'bg-card'} header={'contributor'} text={'I love contributing in open source projects in github and I am super active in twitter and github'} />
-      <Card img={"bg-card"} header={'freelancer'} text={"I am a freelancer at freelancer.com and an arabic site called mostqel this really helps building my experience"} />
+      <h2 className="About-head mb-10" id="color1"><h1 className='text-3xl sm:text-6xl'>About me</h1></h2>
+      <Card img={'bg-card md:inline-block'} header={'Baraa'} text={"Iam Baraa a 15 years old from Lebanon. I love programming and Iam a self taught frontend developer."} />
+      <Card img={'bg-card md:inline-block'} header={'contributor'} text={'I love contributing in open source projects in github and I am active in twitter and dev.to'} />
+      <Card img={"bg-card md:block"} header={'freelancer'} text={"I am a freelancer at freelancer.com and mostqel this really helps building my experience"} />
       <style jsx>{`
 .About-head h1{
   font-weight: 700;
