@@ -10,6 +10,7 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
     var valueright
     function repeatup(event) {
         console.log(event)
+        clearInterval(upiv)
         clearInterval(downiv)
         clearInterval(rightiv)
         clearInterval(leftiv)
@@ -32,6 +33,7 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
     function repeatdown() {
         clearInterval(upiv)
         clearInterval(rightiv)
+        clearInterval(downiv)
         clearInterval(leftiv)
         valueup = jetY
         document.getElementById('jet-body').style.transform = 'rotate(' + (180) + 'deg)'
@@ -52,6 +54,7 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
     function repeatright() {
         clearInterval(upiv)
         clearInterval(downiv)
+        clearInterval(rightiv)
         clearInterval(leftiv)
         valueright = jetX
         const jet_style = getComputedStyle(document.getElementById('jet'))
@@ -68,6 +71,7 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
     }
     function repeatleft() {
         clearInterval(upiv)
+        clearInterval(leftiv)
         clearInterval(downiv)
         clearInterval(rightiv)
         valueright = jetX
@@ -85,7 +89,8 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
     }
     return (
         <div tabIndex={3} role='hold by space so the jet can move or use the arrow keys'
-            aria-label='hold by space or your finger so the jet can move  or use the arrow keys' className='conbuttons-cont'>
+            aria-label='hold by mouse or your finger so the jet can move  or use the arrow keys'
+            className='conbuttons-cont z-10'>
             <input type={'button'} value='<' role="up" alt='up' aria-label='up'
                 onMouseDown={(event) => repeatup(event)} onMouseUp={() => {
                     clearInterval(upiv)

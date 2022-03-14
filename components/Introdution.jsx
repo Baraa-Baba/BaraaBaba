@@ -101,8 +101,12 @@ const Myname = () => {
         window.onresize = () => {
             width = innerWidth
             height = innerHeight
+            render.options.width = innerWidth
+            render.options.height = innerHeight
             Engine.update(engine)
             Engine.update(engine)
+            Matter.Runner.run(engine)
+            Matter.Render.run(render);
             Matter.Render.run(render);
         }
         /*

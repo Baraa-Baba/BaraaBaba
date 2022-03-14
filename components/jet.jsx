@@ -12,11 +12,11 @@ const Jet = () => {
             setjetX(430)
             setjetY(10)
         } else if (innerWidth > 400) {
-            setjetX(200)
-            setjetY(100)
+            setjetX(140)
+            setjetY(75)
         } else if (innerWidth > 200) {
-            setjetX(100)
-            setjetY(100)
+            setjetX(140)
+            setjetY(75)
         } else {
             setjetX(0)
             setjetY(100)
@@ -56,9 +56,8 @@ const Jet = () => {
 
     }
     function up() {
-        if (typeof event !== 'undefined') {
-            event.preventDefault()
-        }
+        event.preventDefault()
+
         document.getElementById('jet-body').style.transform = 'rotate(' + (0) + 'deg)'
         document.getElementById('float').style.animation = "unset"
         const jet_style = getComputedStyle(document.getElementById('jet'))
