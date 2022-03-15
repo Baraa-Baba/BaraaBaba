@@ -11,11 +11,12 @@ const Card = ({ img, header, text }) => {
       }, 100 * i)
     }
   }, [])
+
   return (
-    <div className={`w-[95vw] min-h-[3rem] sm:w-[60vw] md:w-[45vw] p-6 ${img}
+    <div id="card" className={`w-[95vw] min-h-[3rem]  mt-10 sm:w-[60vw] md:w-[45vw] p-6 ${img}
      max-w-[100vw] sm:ml-[3vw] lg:w-[30vw] ml-0 block z-30 lg:inline-block `}>
       <h1 className='text-white text-4xl typing w-fit inline-block'>{header}</h1>
-      <p className='text-white text-3xl '>{typingtext}
+      <p id="card-text" className='text-white text-3xl '>{typingtext}
         <span className='text-red-800'>|</span></p>
     </div>
   )

@@ -86,5 +86,10 @@ body{
     background-image: url(../assets/about-card2.png);
     background-size: 100% 100%;
     object-fit: cover;
+    transition: background-size 3s ease;
     background-repeat: no-repeat;
+}
+.bg-card:hover{
+    background-size: 200% 200%;
+    background-position: center;
 }
