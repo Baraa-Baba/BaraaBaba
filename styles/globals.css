@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+.smooth{
+    transition: all 100ms ease ;
+}
 .me{
     transition: all 2s ease;
     opacity: 0.8;
@@ -88,8 +90,8 @@ body{
     object-fit: cover;
     transition: background-size 3s ease;
     background-repeat: no-repeat;
+    background-position: center;
 }
 .bg-card:hover{
     background-size: 200% 200%;
-    background-position: center;
 }
