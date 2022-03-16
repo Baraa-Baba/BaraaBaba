@@ -1,5 +1,6 @@
 import Jet from '../components/jet.jsx'
 import { useEffect } from 'react';
+import Projects from '../components/projects.jsx';
 import dynamic from 'next/dynamic'
 const Introdution = dynamic(() => import('../components/Introdution'))
 const About = dynamic(() => import('../components/About.jsx'))
@@ -9,6 +10,7 @@ export default function App() {
   }, []);
   return <div className="space pb-10">
     <Jet />
+    <Projects />
     <About />
     <Introdution />
   </div>;
