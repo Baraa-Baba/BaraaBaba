@@ -95,3 +95,12 @@ body{
 .bg-card:hover{
     background-size: 200% 200%;
 }
+
+@layer components {
+    .useful-links{
+        @apply text-cyan-500 hover:text-cyan-400  text-3xl sm:block inline-block mr-10
+    }
+  .skills{
+    @apply rounded-full mr-4 sm:bg-transparent bg-gray-300 inline-block sm:block text-2xl
+  }
+}
