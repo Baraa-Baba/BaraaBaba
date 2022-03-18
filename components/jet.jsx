@@ -3,7 +3,20 @@ import jett from '../assets/jet.png'
 import fire from '../assets/firefromjet.png'
 import { useEffect, useState, useRef } from 'react';
 import ControlButtons from './ControlButtons'
+import { createStore } from 'redux'
 const Jet = () => {
+    function counterReducer(state = { value: 0 }, action) {
+        switch (action.type) {
+            case 'counter/incremented':
+                return { value: state.value + 1 }
+            case 'counter/decremented':
+                return { value: state.value - 1 }
+            default:
+                return state
+        }
+    }
+    let store = createStore(counterReducer)
+    store.subscribe(() => console.log(store.getState()))
     const [jetX, setjetX] = useState(0)
     const [jetY, setjetY] = useState(0)
     const jet = useRef(0)
@@ -72,6 +85,7 @@ const Jet = () => {
     }
     function onKeyDown(event) {
         if (event.keyCode == 40) {
+            store.dispatch({ type: 'counter/incremented' })
             down()
         }
         if (event.keyCode == 39) {

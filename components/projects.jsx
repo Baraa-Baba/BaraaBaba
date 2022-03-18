@@ -1,12 +1,15 @@
 import Image from 'next/image'
 import { useState } from 'react'
+import hangmanss from '../assets/hangman.png'
+import todolist from '../assets/todolist.png'
+import imageeditorimg from '../assets/imageeditor.png'
 const Projects = () => {
     const [hangman_desc, sethangman_desc] = useState(false)
     const [todo_desc, settodo_desc] = useState(false)
     const [imageeditor, setimageeditor] = useState(false)
     return (
         <div className="text-white">
-            <div className='mb-10 opacity-90 sm:w-[70vw] relative h-[70vh] max-w-[100vw] w-[100vw]'>
+            <div tabIndex={10} className='mb-10 opacity-90 sm:w-[70vw] relative h-[70vh] max-w-[100vw] w-[100vw]'>
                 <a href="https://baraa-baba.github.io/hangman-game/"
                     target={'about:blank'} className="text-white text-4xl">hangman game</a>
                 <button onClick={() => sethangman_desc(!hangman_desc)}
@@ -15,6 +18,7 @@ const Projects = () => {
                 <div className='relative'>
                     <iframe className="sm:w-[70vw] h-[70vh] max-w-[100vw] w-[100vw]"
                         src="https://baraa-baba.github.io/hangman-game/">
+                        <Image src={hangmanss} width={999} height={999} alt='hangman website screenshot' />
                     </iframe>
                     {hangman_desc && <div className='w-[100%] h-[100%] top-0 z-50 left-0 absolute bg-opacity-80 
                     bg-black'>
@@ -34,7 +38,7 @@ const Projects = () => {
                     </div>}
                 </div>
             </div>
-            <div className="opacity-90 sm:ml-[30vw] ml-0">
+            <div tabIndex={11} className="opacity-90 sm:ml-[30vw] ml-0">
                 <a href="https://baraa-baba.github.io/to-do-list/" target={'about:blank'}
                     className="text-white text-4xl">To do list</a>
                 <button onClick={() => settodo_desc(!todo_desc)}
@@ -42,7 +46,9 @@ const Projects = () => {
                 <div className='relative'>
                     <iframe className="sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]"
                         src="https://baraa-baba.github.io/to-do-list/">
+                        <Image src={todolist} width={999} height={999} alt='hangman website screenshot' />
                     </iframe>
+
                     {todo_desc && <div className='w-[100%] h-[100%] top-0 z-50 left-0 absolute bg-opacity-80 
                     bg-black'>
                         <h3 className='text-white text-5xl'>Description:</h3>
@@ -62,13 +68,14 @@ const Projects = () => {
                     </div>}
                 </div>
             </div>
-            <div className='opacity-90 sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]'>
+            <div tabIndex={12} className='opacity-90 sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]'>
                 <a href="https://baraa-baba.github.io/image-editor/" target={'about:blank'} className="text-white text-4xl">image editor</a>
                 <button onClick={() => setimageeditor(!imageeditor)}
                     className="text-4xl bg-green-400 ml-5">?</button>
                 <div className='relative sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]'>
                     <iframe className="sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]"
                         src="https://baraa-baba.github.io/image-editor/">
+                        <Image src={imageeditorimg} width={999} height={999} alt='hangman website screenshot' />
                     </iframe>
                     {imageeditor && <div className='w-[100%] h-[100%] top-0 z-50 left-0 absolute bg-opacity-80 
                     bg-black'>
