@@ -5,7 +5,7 @@ import twittericon from '../assets/icons/twitter.png'
 import devtoicon from '../assets/icons/devtoicon.png'
 import freelancericon from '../assets/icons/freelancer_com.jpg'
 import mostqelicon from '../assets/icons/mostqel.png'
-const Card = ({ img, header, text, links, index }) => {
+const Card = ({ img, header, text, links }) => {
   const [typingtext, settypingtext] = useState()
   const [typingfinished, settypingfinished] = useState(false)
   const [icons, seticons] = useState()
@@ -48,7 +48,7 @@ const Card = ({ img, header, text, links, index }) => {
   }, [])
 
   return (
-    <div id="card" tabIndex={index} aria-label={text} className={`w-[95vw] bg-card min-h-[3rem]  mt-10 sm:w-[60vw] md:w-[45vw] p-6 ${img}
+    <div id="card" aria-label={text} className={`w-[95vw] bg-card min-h-[3rem]  mt-10 sm:w-[60vw] md:w-[45vw] p-6 ${img}
      max-w-[100vw] sm:ml-[3vw] lg:w-[30vw] ml-0 block z-30 lg:inline-block `}>
       <h1 className={`text-white  text-4xl ${header == 'for everyone' && 'pb-3'} typing w-fit mb-5 inline-block`}>
         {header}</h1>
