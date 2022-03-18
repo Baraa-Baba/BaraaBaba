@@ -1,8 +1,7 @@
 import Card from "./Card"
 const About = () => {
-
   return (
-    <div className="max-w-[100vw]">
+    <div className="max-w-[100vw]" ref={About}>
       <h1 className="text-5xl font-extrabold text-white text-center ">About me</h1>
       <Card img={'md:inline-block'} links="none" header={'Baraa'} text={"Iam Baraa a 15 years old from Lebanon. I love programming and I am a self taught frontend developer."} />
       <Card img={'md:inline-block'} links="GTD" header={'contributor'} text={'I love contributing in open source projects in github and I am active in twitter and dev.to.'} />
