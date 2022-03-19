@@ -5,7 +5,7 @@ import devtoicon from '../assets/icons/devtoicon.png'
 import freelancericon from '../assets/icons/freelancer_com.jpg'
 import mostqelicon from '../assets/icons/mostqel.png'
 import { useEffect, useState, useMemo, useRef } from 'react'
-const Card = ({ img, header, text, links }) => {
+const Card = ({ img, header, text, links, index }) => {
   const [typingtext, settypingtext] = useState()
   const [typingfinished, settypingfinished] = useState(false)
   const [icons, seticons] = useState()
@@ -20,23 +20,23 @@ const Card = ({ img, header, text, links }) => {
           if (i == text.length - 1) {
             settypingfinished(true)
             if (links == 'GTD') {
-              seticons(<><a target={'_blank'} rel="noreferrer" title='github' className='mr-[auto]' href="https://github.com/baraa-baba">
-                <Image src={githubicon} alt='github icon' height='75' width='75' />
-              </a> <a target={'_blank'} title='twitter' rel="noreferrer" className='m-auto'
+              seticons(<><a target={'_blank'} tabIndex={6} rel="noreferrer" title='github' className='mr-[auto]' href="https://github.com/baraa-baba">
+                <Image src={githubicon} alt='github  link' height='75' width='75' />
+              </a> <a tabIndex={7} target={'_blank'} title='twitter' rel="noreferrer" className='m-auto'
                 href="https://twitter.com/baraa_baba">
-                  <Image src={twittericon} alt='twitter icon' height='75' width='75' />
+                  <Image src={twittericon} alt='twitter link' height='75' width='75' />
                 </a>
-                <a target={'_blank'} title='dev.to' rel="noreferrer" className='m-auto'
+                <a tabIndex={8} target={'_blank'} title='dev.to' rel="noreferrer" className='m-auto'
                   href="https://dev.to/baraa_baba">
-                  <Image src={devtoicon} alt='dev.to icon' height='75' width='75' />
+                  <Image src={devtoicon} alt='dev.to  link' height='75' width='75' />
                 </a>
               </>)
             }
             else if (links == 'FM') {
-              seticons(<><a target={'_blank'} rel="noreferrer" title='freelancer' className='mr-[auto]'
+              seticons(<><a target={'_blank'} tabIndex={10} rel="noreferrer" title='freelancer' className='mr-[auto]'
                 href="https://www.freelancer.com/u/baraa12baba">
                 <Image src={freelancericon} alt='freelancer icon' height='75' width='75' />
-              </a> <a target={'_blank'} rel="noreferrer" title='mostqel' className='m-auto'
+              </a> <a target={'_blank'} tabIndex={11} rel="noreferrer" title='mostqel' className='m-auto'
                 href="https://mostaql.com/u/Baraa1Baba">
                   <Image src={mostqelicon} alt='mostqel icon' height='75' width='75' />
                 </a>
@@ -81,7 +81,7 @@ const Card = ({ img, header, text, links }) => {
     }
   }, [Card, options, runedfunc])
   return (
-    <div id="card" ref={Card} aria-label={text} className={`w-[95vw] bg-card min-h-[3rem] 
+    <div tabIndex={index} id="card" ref={Card} aria-label={text} className={`w-[95vw] bg-card min-h-[3rem] 
     mt-10 sm:w-[60vw] md:w-[45vw] p-6 ${img} 
      max-w-[100vw] sm:ml-[3vw] lg:w-[30vw] ml-0 block z-30 lg:inline-block h-fit`}>
       {/*a trick so I can make all cards's height the same*/}

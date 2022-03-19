@@ -9,7 +9,7 @@ const Projects = () => {
     const [imageeditor, setimageeditor] = useState(false)
     return (
         <div className="text-white">
-            <div tabIndex={10} className='mb-10 opacity-90 sm:w-[70vw] relative h-[70vh] max-w-[100vw] w-[100vw]'>
+            <div tabIndex={14} className='mb-10 opacity-90 sm:w-[70vw] relative h-[70vh] max-w-[100vw] w-[100vw]'>
                 <a href="https://baraa-baba.github.io/hangman-game/"
                     target={'about:blank'} className="text-white text-4xl">hangman game</a>
                 <button onClick={() => sethangman_desc(!hangman_desc)}
@@ -38,7 +38,7 @@ const Projects = () => {
                     </div>}
                 </div>
             </div>
-            <div tabIndex={11} className="opacity-90 sm:ml-[30vw] ml-0">
+            <div tabIndex={20} className="opacity-90 sm:ml-[30vw] ml-0">
                 <a href="https://baraa-baba.github.io/to-do-list/" target={'about:blank'}
                     className="text-white text-4xl">To do list</a>
                 <button onClick={() => settodo_desc(!todo_desc)}
@@ -68,7 +68,7 @@ const Projects = () => {
                     </div>}
                 </div>
             </div>
-            <div tabIndex={12} className='opacity-90 sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]'>
+            <div tabIndex={30} className='opacity-90 sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]'>
                 <a href="https://baraa-baba.github.io/image-editor/" target={'about:blank'} className="text-white text-4xl">image editor</a>
                 <button onClick={() => setimageeditor(!imageeditor)}
                     className="text-4xl bg-green-400 ml-5">?</button>
