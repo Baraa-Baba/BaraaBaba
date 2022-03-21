@@ -122,7 +122,8 @@ const Jet = () => {
     return (
         <>
             {/*added this div just to use postion relative */}
-            <div role='jet' className='fixed' aria-label='the jet you gonna use to navgate the site use the arrow keys or contral buttons'
+            <div role='jet' className='fixed' aria-label='the jet you gonna use to navigate 
+            the site use the arrow keys or contral buttons or just use tab'
                 tabIndex={2} id="jet" ref={jet}>
                 {/* added div cause Image can't have styles and img don't work*/}
                 <div id='jet-body' className='me '>

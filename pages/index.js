@@ -7,7 +7,7 @@ const Projects = dynamic(() => import('../components/projects.jsx'))
 export default function App() {
   useEffect(() => {
     window.scrollTo(0, document.body.clientHeight)
-  }, []);
+  }, [])
   return <div className="space pb-10">
     <Jet />
     <Projects />

@@ -12,7 +12,7 @@ const Projects = () => {
             <div tabIndex={14} className='mb-10 opacity-90 sm:w-[70vw] relative h-[70vh] max-w-[100vw] w-[100vw]'>
                 <a href="https://baraa-baba.github.io/hangman-game/"
                     target={'about:blank'} className="text-white text-4xl">hangman game</a>
-                <button onClick={() => sethangman_desc(!hangman_desc)}
+                <button title='click to see description' onClick={() => sethangman_desc(!hangman_desc)}
                     className="text-4xl cursor-pointer rounded-full bg-green-400 ml-5">?</button>
                 {/*this is div is to contain the iframe and overlay so the overlay fits perfectly*/}
                 <div className='relative'>
@@ -41,7 +41,7 @@ const Projects = () => {
             <div tabIndex={20} className="opacity-90 sm:ml-[30vw] ml-0">
                 <a href="https://baraa-baba.github.io/to-do-list/" target={'about:blank'}
                     className="text-white text-4xl">To do list</a>
-                <button onClick={() => settodo_desc(!todo_desc)}
+                <button title='click to see description' onClick={() => settodo_desc(!todo_desc)}
                     className="text-4xl bg-green-400 ml-5">?</button>
                 <div className='relative'>
                     <iframe className="sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]"
@@ -70,7 +70,8 @@ const Projects = () => {
             </div>
             <div tabIndex={30} className='opacity-90 sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]'>
                 <a href="https://baraa-baba.github.io/image-editor/" target={'about:blank'} className="text-white text-4xl">image editor</a>
-                <button onClick={() => setimageeditor(!imageeditor)}
+                <button title='click to see description'
+                    onClick={() => setimageeditor(!imageeditor)}
                     className="text-4xl bg-green-400 ml-5">?</button>
                 <div className='relative sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]'>
                     <iframe className="sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]"

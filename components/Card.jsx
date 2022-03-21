@@ -10,7 +10,6 @@ const Card = ({ img, header, text, links, index }) => {
   const [typingfinished, settypingfinished] = useState(false)
   const [icons, seticons] = useState()
   const [runedfunc, setrunedfunc] = useState(false)
-  var a
   var typingtextC = ''
   function type() {
     if (!runedfunc) {
@@ -50,7 +49,6 @@ const Card = ({ img, header, text, links, index }) => {
       }
     }
   }
-
 
   const Card = useRef(null)
   const callback = entries => {
