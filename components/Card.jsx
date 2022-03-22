@@ -45,7 +45,7 @@ const Card = ({ img, header, text, links, index }) => {
           }
           typingtextC += text[i]
           settypingtext(typingtextC)
-        }, 100 * i)
+        }, 60 * i)
       }
     }
   }
