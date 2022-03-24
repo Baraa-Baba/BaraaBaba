@@ -104,3 +104,6 @@ body{
     @apply rounded-full mr-4 sm:bg-transparent bg-gray-300 inline-block sm:block text-2xl
   }
 }
+.hover-appear:hover ~ .project-desc-cont {
+    display: block;
+}

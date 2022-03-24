@@ -5,6 +5,9 @@ import { useEffect, useState, useRef } from 'react';
 import ControlButtons from './ControlButtons'
 import { createStore } from 'redux'
 const Jet = () => {
+    useEffect(() => {
+        window.scrollTo(0, document.body.clientHeight)
+    }, [])
     function counterReducer(state = { value: 0 }, action) {
         switch (action.type) {
             case 'counter/incremented':

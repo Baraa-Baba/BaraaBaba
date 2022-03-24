@@ -72,13 +72,13 @@ const Projects = () => {
                 <a href="https://baraa-baba.github.io/image-editor/" target={'about:blank'} className="text-white text-4xl">image editor</a>
                 <button title='click to see description'
                     onClick={() => setimageeditor(!imageeditor)}
-                    className="text-4xl bg-green-400 ml-5">?</button>
+                    className="hover-appear text-4xl bg-green-400 ml-5">?</button>
                 <div className='relative sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]'>
                     <iframe className="sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]"
                         src="https://baraa-baba.github.io/image-editor/">
                         <Image src={imageeditorimg} width={999} height={999} alt='hangman website screenshot' />
                     </iframe>
-                    {imageeditor && <div className='w-[100%] h-[100%] top-0 z-50 left-0 absolute bg-opacity-80 
+                    {imageeditor && <div className='project-desc-cont w-[100%] h-[100%] top-0 z-50 left-0 absolute bg-opacity-80 
                     bg-black'>
                         <h3 className='text-white text-5xl'>Description:</h3>
                         <p className='text-white text-2xl'>

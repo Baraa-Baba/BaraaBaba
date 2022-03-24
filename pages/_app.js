@@ -4,11 +4,11 @@ import LoadingPage from '../components/LoadingPage';
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setLoading(false);
-  }, []);
+    setLoading(false)
+  }, [])
   return (
     <>
-      {!loading ? <Component {...pageProps} /> : <LoadingPage />}
+      {!loading ? <Component loading={loading} {...pageProps} /> : <LoadingPage />}
     </>
   )
 }

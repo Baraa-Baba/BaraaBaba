@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import dynamic from 'next/dynamic'
+import Introdution from '../components/Introdution'
 const Jet = dynamic(() => import('../components/jet'))
-const Introdution = dynamic(() => import('../components/Introdution'))
 const About = dynamic(() => import('../components/About.jsx'))
 const Projects = dynamic(() => import('../components/projects.jsx'))
 export default function App({ loading }) {
   useEffect(() => {
-    window.scrollTo(0, document.body.clientHeight)
-  }, [])
-  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, document.body.clientHeight)
+    }, 500)
     setTimeout(() => {
       window.scrollTo(0, document.body.clientHeight)
     }, 1000)
