@@ -101,8 +101,8 @@ body{
         @apply text-cyan-500 hover:text-cyan-400  text-3xl sm:block inline-block mr-10
     }
     .contact-input{
-        @apply rounded-full text-3xl border-2 border-white shadow-sm shadow-white bg-transparent mb-5 p-2
-        text-white
+        @apply rounded-full text-2xl border-2 border-white shadow-sm shadow-white bg-transparent mb-5 p-2
+        text-white max-w-[100vw] sm:text-3xl
     }
   .skills{
     @apply rounded-full mr-4 sm:bg-transparent bg-gray-300 inline-block sm:block text-2xl
