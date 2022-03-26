@@ -70,6 +70,7 @@ const Projects = () => {
             </div>
             <div tabIndex={30} className='opacity-90 sm:w-[70vw] h-[70vh]  mb-10 max-w-[100vw] w-[100vw]'>
                 <a href="https://baraa-baba.github.io/image-editor/" target={'about:blank'} className="text-white text-4xl">image editor</a>
+
                 <button title='click to see description'
                     onClick={() => setimageeditor(!imageeditor)}
                     className="hover-appear text-4xl bg-green-400 ml-5">?</button>
@@ -78,22 +79,23 @@ const Projects = () => {
                         src="https://baraa-baba.github.io/image-editor/">
                         <Image src={imageeditorimg} width={999} height={999} alt='hangman website screenshot' />
                     </iframe>
-                    {imageeditor && <div className='project-desc-cont w-[100%] h-[100%] top-0 z-50 left-0 absolute bg-opacity-80 
+                    {imageeditor &&
+                        <div className='project-desc-cont w-[100%] h-[100%] top-0 z-50 left-0 absolute bg-opacity-80 
                     bg-black'>
-                        <h3 className='text-white text-5xl'>Description:</h3>
-                        <p className='text-white text-2xl'>
-                            This is an image editor that I really enjoy doing it really taught me a lot of stuff about images most importantly aspect ratio
-                        </p>
-                        <h4 className="text-white text-4xl">Skills:</h4>
-                        <p className="text-orange-600 skills">HTML</p>
-                        <p className="text-blue-600 skills">CSS</p>
-                        <p className="text-yellow-800 skills">javascript</p>
-                        <h4 className="text-white text-4xl">Useful links:</h4>
-                        <a target={'about:blank'} href="https://github.com/Baraa-Baba/image-editor"
-                            className="useful-links">CODE</a>
-                        <a target={'about:blank'} href="https://baraa-baba.github.io/image-editor/" className="useful-links">Website</a>
-                        <a target={'about:blank'} href="https://mostaql.com/portfolio/897607" className="useful-links">Arabic description</a>
-                    </div>}
+                            <h3 className='text-white text-5xl'>Description:</h3>
+                            <p className='text-white text-2xl'>
+                                This is an image editor that I really enjoy doing it really taught me a lot of stuff about images most importantly aspect ratio
+                            </p>
+                            <h4 className="text-white text-4xl">Skills:</h4>
+                            <p className="text-orange-600 skills">HTML</p>
+                            <p className="text-blue-600 skills">CSS</p>
+                            <p className="text-yellow-800 skills">javascript</p>
+                            <h4 className="text-white text-4xl">Useful links:</h4>
+                            <a target={'about:blank'} href="https://github.com/Baraa-Baba/image-editor"
+                                className="useful-links">CODE</a>
+                            <a target={'about:blank'} href="https://baraa-baba.github.io/image-editor/" className="useful-links">Website</a>
+                            <a target={'about:blank'} href="https://mostaql.com/portfolio/897607" className="useful-links">Arabic description</a>
+                        </div>}
                 </div>
             </div>
         </div >
