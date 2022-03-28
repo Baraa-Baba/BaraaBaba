@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import dynamic from 'next/dynamic'
 import Introdution from '../components/Introdution'
+const SocialAccounts = dynamic(() => import('../components/SocialAccounts'))
 const Jet = dynamic(() => import('../components/jet'))
 const About = dynamic(() => import('../components/About.jsx'))
 const Projects = dynamic(() => import('../components/projects.jsx'))
@@ -17,6 +18,7 @@ export default function App({ loading }) {
   return <div className="space pb-10">
     <Jet />
     <Contact />
+    <SocialAccounts />
     <Projects />
     <About />
     <Introdution />

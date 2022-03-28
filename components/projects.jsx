@@ -98,6 +98,7 @@ const Projects = () => {
                         </div>}
                 </div>
             </div>
+            <h1 className="text-white text-5xl text-center font-bold">projects</h1>
         </div >
     )
 }

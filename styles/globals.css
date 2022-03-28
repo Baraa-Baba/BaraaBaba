@@ -108,3 +108,13 @@ body{
     @apply rounded-full mr-4 sm:bg-transparent bg-gray-300 inline-block sm:block text-2xl
   }
 }
+.fade-in{
+    animation:fade 6s ;
+}
+@keyframes fade{
+    from{
+        opacity: 0;
+    }to{
+    opacity: 1;
+    }
+}

@@ -30,7 +30,8 @@ const Contact = () => {
         }
     }, [Contact_ref, options])
     return (
-        <div ref={Contact_ref} className="container  h-[70vh] relative bg-transparent mb-40">
+        <div ref={Contact_ref} className="container min-h-[25rem] h-[70vh] relative
+         bg-transparent mb-40">
             <div className={`${animation} absolute left-[-200px]`}>
                 <h1 className="text-5xl text-white font-bold mb-5">Contact Me</h1>
                 <form target="_blank" action="https://formsubmit.co/9d6d1a7d16373e389623c00f48207d1c" method="POST">
@@ -44,8 +45,9 @@ const Contact = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={`form-group px-3  `}>
-                        <textarea placeholder="Your Message" className="resize-y text-2xl max-w-[95vw] w-[30rem] bg-transparent text-white
+                    <div className={`form-group px-0 sm:px-3  `}>
+                        <textarea placeholder="Your Message" className="resize-y text-2xl 
+                        max-w-[95vw] w-[30rem] bg-transparent text-white
                     border-[1px] border-white"
                             name="message" rows="6" required></textarea>
                     </div>

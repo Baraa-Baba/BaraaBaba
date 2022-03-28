@@ -22,7 +22,7 @@ const Jet = () => {
     store.subscribe(() => console.log(store.getState()))
     const [jetX, setjetX] = useState(0)
     const [jetY, setjetY] = useState(0)
-    const jet = useRef(0)
+    const jet = useRef(null)
     useEffect(() => {
         if (innerWidth > 800) {
             setjetX(430)
@@ -42,6 +42,7 @@ const Jet = () => {
         event.preventDefault();
         document.getElementById('jet-body').style.transform = 'rotate(' + (-25) + 'deg)'
         document.getElementById('float').style.animation = "unset"
+        jet.current.display = 'none'
         const jet_style = getComputedStyle(document.getElementById('jet'))
         if (parseInt(jet_style.left) + jetX > 0) {
             setjetX(jetX - 10)

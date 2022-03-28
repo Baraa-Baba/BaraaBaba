@@ -53,8 +53,8 @@ const Myname = () => {
              /*L*/ i == 22 ? url = 'https://i.ibb.co/T13FtxR/22.png' : null
              /*P*/ i == 24 ? url = 'https://i.ibb.co/JCL187K/24.png' : null
             var letter = Matter.Bodies.rectangle((40 + X) * scale, 200 + Y, 80 * scale, 80 * scale, {
-                friction: 0.3,
-                torque: 0,
+                friction: 3,
+                torque: 0.6,
                 render: {
                     sprite: {
                         texture: url,
@@ -151,8 +151,8 @@ const Myname = () => {
                 }, 100);
             }
         }*/
-        engine.gravity.scale = 0
-        engine.gravity.y = 0
+        engine.gravity.scale = 0.00001
+        engine.gravity.y = -0.1
         engine.enableSleeping = true
         Matter.Sleeping = true
         Matter.World.add(engine.world, [

@@ -19,23 +19,27 @@ const Card = ({ img, header, text, links, index }) => {
           if (i == text.length - 1) {
             settypingfinished(true)
             if (links == 'GTD') {
-              seticons(<><a target={'_blank'} tabIndex={6} rel="noreferrer" title='github' className='mr-[auto]' href="https://github.com/baraa-baba">
+              seticons(<><a target={'_blank'} tabIndex={6} rel="noreferrer" title='github' className='fade-in mr-[auto]' href="https://github.com/baraa-baba">
                 <Image src={githubicon} alt='github  link' height='75' width='75' />
-              </a> <a tabIndex={7} target={'_blank'} title='twitter' rel="noreferrer" className='m-auto'
+              </a> <a tabIndex={7} target={'_blank'} title='twitter' rel="noreferrer"
+                className='m-auto fade-in'
                 href="https://twitter.com/baraa_baba">
                   <Image src={twittericon} alt='twitter link' height='75' width='75' />
                 </a>
-                <a tabIndex={8} target={'_blank'} title='dev.to' rel="noreferrer" className='m-auto'
+                <a tabIndex={8} target={'_blank'} title='dev.to' rel="noreferrer"
+                  className='m-auto fade-in'
                   href="https://dev.to/baraa_baba">
                   <Image src={devtoicon} alt='dev.to  link' height='75' width='75' />
                 </a>
               </>)
             }
             else if (links == 'FM') {
-              seticons(<><a target={'_blank'} tabIndex={10} rel="noreferrer" title='freelancer' className='mr-[auto]'
+              seticons(<><a target={'_blank'} tabIndex={10} rel="noreferrer" title='freelancer'
+                className=' fade-in  align-between justify-between'
                 href="https://www.freelancer.com/u/baraa12baba">
                 <Image src={freelancericon} alt='freelancer icon' height='75' width='75' />
-              </a> <a target={'_blank'} tabIndex={11} rel="noreferrer" title='mostqel' className='m-auto'
+              </a> <a target={'_blank'} tabIndex={11} rel="noreferrer" title='mostqel'
+                className='fade-in  align-between justify-between'
                 href="https://mostaql.com/u/Baraa1Baba">
                   <Image src={mostqelicon} alt='mostqel icon' height='75' width='75' />
                 </a>
@@ -53,7 +57,6 @@ const Card = ({ img, header, text, links, index }) => {
   const Card = useRef(null)
   const callback = entries => {
     const [entry] = entries
-    console.log(entry.isIntersecting)
     if (entry.isIntersecting) {
       if (!runedfunc) {
         type()
@@ -79,9 +82,10 @@ const Card = ({ img, header, text, links, index }) => {
     }
   }, [Card, options, runedfunc])
   return (
-    <div tabIndex={index} id="card" ref={Card} aria-label={text} className={`w-[95vw] bg-card min-h-[3rem] 
+    <div tabIndex={index} id="card" ref={Card} aria-label={text} className={`w-[95vw] bg-card 
+    min-h-[3rem] mr-0
     mt-10 sm:w-[60vw] md:w-[45vw] p-6 ${img} 
-     max-w-[100vw] sm:ml-[3vw] lg:w-[30vw] ml-0 block z-30 lg:inline-block h-fit`}>
+     max-w-[100vw] md:ml-[3vw] lg:w-[30vw] ml-0 block z-30 lg:inline-block h-fit`}>
       {/*a trick so I can make all cards's height the same*/}
       <h1 className={`text-white  text-4xl ${header == 'for everyone' && 'pb-3'} typing w-fit mb-5 inline-block`}>
         {header} </h1>
@@ -89,7 +93,7 @@ const Card = ({ img, header, text, links, index }) => {
         {typingtext}
         {!typingfinished ? <span className='text-red-800'>|</span> : null}
       </p>
-      <div>{icons}</div>
+      <div className='flex justify-between align-between'>{icons}</div>
     </div>
   )
 }
