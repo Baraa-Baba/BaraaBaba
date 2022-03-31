@@ -27,7 +27,7 @@ const LoadingPage = () => {
     }, [])
     return (
         <div className="w-[100vw] h-[100vh] flex bg-gray-700">
-            <h1 className='justify-center justify-items-center flex items-center text-4xl text-white'>{Loading_text}</h1>
+            <h1 className='text-center text-4xl text-white'>{Loading_text}</h1>
         </div>
     );
 }

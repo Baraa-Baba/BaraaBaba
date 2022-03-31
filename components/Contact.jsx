@@ -51,13 +51,16 @@ const Contact = () => {
                     border-[1px] border-white"
                             name="message" rows="6" required></textarea>
                     </div>
-                    <button type="submit" className="rounded-full font-bold text-3xl border-2 
-                 border-purple-800 bg-transparent shadow-lg shadow-purple-600 p-5 
-                 text-white
-                 hover:bg-purple-900">Submit Form</button>
+                    <button type="submit" className="rounded-full font-bold text-3xl
+                  bg-transparent shadow-lg hover:shadow-purple-600 p-5 
+                 text-white contact-effect
+                 ">Submit Form</button>
                 </form>
             </div>
             <style jsx>{`
+            .contact-effect{
+                background: radial-gradient(#0000 30%, #42006e);
+            }
             .slide {
     -webkit-animation: slide 0.5s forwards;
     -webkit-animation-delay: 2s;

@@ -38,6 +38,17 @@ const Myname = () => {
             var scale = 1
         }
 
+        if (innerWidth > 600) {
+            var tipX = innerWidth - 250
+            var tipscale = 1
+            var frictionD = 3
+            var torqueD = 0.4
+        } else {
+            var frictionD = 0
+            var torqueD = 0
+            var tipX = 175
+            var tipscale = 0.75
+        }
         var url
         for (var i = 1; i < 27; i++) {
         /*B */    i == 1 || i == 6 || i == 8 ? url = 'https://i.ibb.co/93KcsPy/1.png' : null
@@ -53,8 +64,8 @@ const Myname = () => {
              /*L*/ i == 22 ? url = 'https://i.ibb.co/T13FtxR/22.png' : null
              /*P*/ i == 24 ? url = 'https://i.ibb.co/JCL187K/24.png' : null
             var letter = Matter.Bodies.rectangle((40 + X) * scale, 200 + Y, 80 * scale, 80 * scale, {
-                friction: 3,
-                torque: 0.6,
+                friction: frictionD,
+                torque: torqueD,
                 render: {
                     sprite: {
                         texture: url,
@@ -76,13 +87,6 @@ const Myname = () => {
                 X = 40
             }
             Matter.World.add(engine.world, letter);
-        }
-        if (innerWidth > 600) {
-            var tipX = innerWidth - 250
-            var tipscale = 1
-        } else {
-            var tipX = 200
-            var tipscale = 0.75
         }
         let tip = Matter.Bodies.rectangle(tipX, 100, 80, 80, {
             friction: 0.3,

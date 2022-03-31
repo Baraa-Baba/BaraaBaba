@@ -9,14 +9,14 @@ const Projects = () => {
     const [imageeditor, setimageeditor] = useState(false)
     return (
         <div className="text-white">
-            <div tabIndex={14} className='mb-10 opacity-90 sm:w-[70vw] relative h-[70vh] max-w-[100vw] w-[100vw]'>
+            <div tabIndex={14} className='mt-10 opacity-90 mb-24 sm:w-[70vw] relative h-[70vh] max-w-[100vw] w-[100vw]'>
                 <a href="https://baraa-baba.github.io/hangman-game/"
                     target={'about:blank'} className="text-white text-4xl">hangman game</a>
                 <button title='click to see description' onClick={() => sethangman_desc(!hangman_desc)}
                     className="text-4xl cursor-pointer rounded-full bg-green-400 ml-5">?</button>
                 {/*this is div is to contain the iframe and overlay so the overlay fits perfectly*/}
                 <div className='relative'>
-                    <iframe className="sm:w-[70vw] h-[70vh] max-w-[100vw] w-[100vw]"
+                    <iframe className="sm:w-[70vw] h-[70vh] max-w-[100vw] w-[100vw] mb-10"
                         src="https://baraa-baba.github.io/hangman-game/">
                         <Image src={hangmanss} width={999} height={999} alt='hangman website screenshot' />
                     </iframe>
@@ -38,7 +38,7 @@ const Projects = () => {
                     </div>}
                 </div>
             </div>
-            <div tabIndex={20} className="opacity-90 sm:ml-[30vw] ml-0">
+            <div tabIndex={20} className="mt-10 opacity-90 sm:ml-[30vw] ml-0 mb-10">
                 <a href="https://baraa-baba.github.io/to-do-list/" target={'about:blank'}
                     className="text-white text-4xl">To do list</a>
                 <button title='click to see description' onClick={() => settodo_desc(!todo_desc)}
