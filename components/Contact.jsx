@@ -30,7 +30,7 @@ const Contact = () => {
         }
     }, [Contact_ref, options])
     return (
-        <div ref={Contact_ref} className="container min-h-[25rem] h-[70vh] relative
+        <div ref={Contact_ref} className="container min-h-[25rem] h-[70vh] relative 
          bg-transparent mb-40">
             <div className={`${animation} absolute left-[-200px]`}>
                 <h1 className="text-5xl text-white font-bold mb-5">Contact Me</h1>
@@ -51,15 +51,17 @@ const Contact = () => {
                     border-[1px] border-white"
                             name="message" rows="6" required></textarea>
                     </div>
-                    <button type="submit" className="rounded-full font-bold text-3xl
-                  bg-transparent shadow-lg hover:shadow-purple-600 p-5 
-                 text-white contact-effect
+                    <button type="submit" className="font-bold text-3xl text-white 
+                   shadow-lg p-5 border-white border-2 contact-effect
                  ">Submit Form</button>
                 </form>
             </div>
             <style jsx>{`
             .contact-effect{
-                background: radial-gradient(#0000 30%, #42006e);
+                box-shadow: 0px 1px 3px , 0px -1px 3px , -1px 0px 3px , 1px 0px 3px  ;
+            }
+            .contact-effect:hover{
+                box-shadow: 0px 1px 6px , 0px -1px 6px , -1px 0px 6px , 1px 0px 6px  ;
             }
             .slide {
     -webkit-animation: slide 0.5s forwards;

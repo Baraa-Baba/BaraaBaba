@@ -18,12 +18,13 @@ const Myname = () => {
         var height = innerHeight
 
         let render = Matter.Render.create({
-            element: document.querySelector('body'),
+            element: document.querySelector('#introduction'),
             engine: engine,
             options: {
                 width: innerWidth,
                 height: innerHeight,
-                wireframes: false
+                wireframes: false,
+                background: 'transparent'
             }
         });
 
@@ -180,7 +181,7 @@ const Myname = () => {
     }, []);
 
     return (
-        <div tabIndex={1} aria-label="Baraa Baba frontend developer">
+        <div tabIndex={1} id='introduction' className='p-0 m-0 h-fit' aria-label="Baraa Baba frontend developer">
         </div>
     );
 }

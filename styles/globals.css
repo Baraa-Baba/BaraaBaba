@@ -105,7 +105,8 @@ body{
         text-white max-w-[100vw] sm:text-3xl
     }
   .skills{
-    @apply rounded-full mr-4 sm:bg-transparent bg-gray-300 inline-block sm:block text-2xl
+    @apply rounded-full mr-4 sm:bg-transparent bg-gray-300 inline-block sm:block text-2xl p-1 
+    font-bold
   }
 }
 .fade-in{

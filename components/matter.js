@@ -2631,9 +2631,6 @@ var Axes = __webpack_require__(11);
             case 'isStatic':
                 Body.setStatic(body, value);
                 break;
-            case 'isSleeping':
-                Sleeping.set(body, value);
-                break;
             case 'mass':
                 Body.setMass(body, value);
                 break;
