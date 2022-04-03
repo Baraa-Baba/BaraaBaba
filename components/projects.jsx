@@ -8,7 +8,7 @@ const Projects = () => {
     const [todo_desc, settodo_desc] = useState(false)
     const [imageeditor, setimageeditor] = useState(false)
     return (
-        <div className="text-white">
+        <div className="text-white z-10">
             <div tabIndex={14} className='mt-10 opacity-90 mb-24 sm:w-[70vw] relative h-[70vh] max-w-[100vw] w-[100vw]'>
                 <a href="https://baraa-baba.github.io/hangman-game/"
                     target={'about:blank'} className="text-white text-4xl">hangman game</a>

@@ -67,9 +67,6 @@ const Myname = () => {
              /*P*/ i == 24 ? url = 'https://i.ibb.co/JCL187K/24.png' : null
 
             var letter = Matter.Bodies.rectangle((40 + X) * scale, 200 + Y, 80 * scale, 80 * scale, {
-                friction: 0.1,
-                restitution: 0.5,
-                torque: 2,
                 render: {
                     sprite: {
                         texture: url,
@@ -199,7 +196,7 @@ const Myname = () => {
     return (
         <div tabIndex={1} id='introduction' className='p-0 m-0 relative' aria-label="Baraa Baba frontend developer">
             <div className='bg-gap h-[15rem]'></div>
-            <button id='enable-gravity' className='top-72 left-0 text-white text-3xl bg-transparent border-2 border-white absolute '>
+            <button id='enable-gravity' className='bottom-0 left-0 text-white text-3xl bg-transparent border-2 border-white absolute '>
                 enable gravity</button>
             <style jsx>{`
                 .bg-gap{

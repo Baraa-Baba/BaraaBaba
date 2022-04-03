@@ -26,16 +26,16 @@ const Jet = () => {
     useEffect(() => {
         if (innerWidth > 800) {
             setjetX(430)
-            setjetY(10)
+            setjetY(150)
         } else if (innerWidth > 400) {
             setjetX(140)
-            setjetY(75)
+            setjetY(150)
         } else if (innerWidth > 200) {
             setjetX(140)
-            setjetY(75)
+            setjetY(150)
         } else {
             setjetX(0)
-            setjetY(100)
+            setjetY(150)
         }
     }, [])
     function left() {
