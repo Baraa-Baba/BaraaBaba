@@ -1,52 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.smooth{
-    transition: all 100ms ease ;
+
+.smooth {
+    transition: all 100ms ease;
 }
-.me{
+
+.me {
     transition: all 2s ease;
-    opacity: 0.8;
-   
+
 }
-.float{
+
+.float {
     animation: float 3s linear infinite alternate;
 }
+
 @keyframes float {
-    from{
+    from {
         transform: translateY(-1rem);
     }
-    to{
+
+    to {
         transform: translateY(1rem);
     }
 }
-html{
-    max-width:100vw;
+
+html {
+    max-width: 100vw;
     overflow: hidden;
 }
 
-body{
+body {
     scroll-behavior: smooth;
 }
 
-.space{
+.space {
     background-image: url(../assets/star.svg);
     background-repeat: 7;
     background-size: 100vw;
 }
-.anim{
+
+.anim {
     animation: appear 3s 1;
     display: block;
 }
+
 @keyframes appear {
     from {
         display: none;
     }
-    to{
+
+    to {
         display: block;
     }
 }
-.conbuttons-cont{
+
+.conbuttons-cont {
     max-width: 100vw;
     right: 0;
     position: fixed;
@@ -54,7 +63,8 @@ body{
     width: fit-content;
     bottom: 0;
 }
-.conbuttons{
+
+.conbuttons {
     cursor: pointer;
     text-align: center;
     background-color: white;
@@ -63,14 +73,16 @@ body{
     height: 4rem;
     opacity: 0.4;
     font-weight: 800;
-    font-size: 3rem ;
+    font-size: 3rem;
     border-radius: 50%;
 }
-.outline-text{
+
+.outline-text {
     -webkit-text-stroke: 2px solid rgb(252, 110, 110);
- 
+
 }
-.typing{
+
+.typing {
     overflow: hidden;
     border-right: .15em solid orange;
     white-space: nowrap;
@@ -80,11 +92,18 @@ body{
     width: 0;
     animation: typing 3s infinite alternate-reverse forwards;
 }
+
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-.bg-card{
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+.bg-card {
     background-image: url(../assets/about-card2.png);
     background-size: 100% 100%;
     object-fit: cover;
@@ -92,30 +111,38 @@ body{
     background-repeat: no-repeat;
     background-position: center;
 }
-.bg-card:hover{
+
+.bg-card:hover {
     background-size: 200% 200%;
 }
 
 @layer components {
-    .useful-links{
-        @apply text-cyan-500 hover:text-cyan-400  text-3xl sm:block inline-block mr-10
+
+    .useful-links {
+        @apply text-cyan-500 hover:text-cyan-400 text-3xl sm:block inline-block mr-10
     }
-    .contact-input{
-        @apply rounded-full text-2xl border-2 border-white shadow-sm shadow-white bg-transparent mb-5 p-2
-        text-white max-w-[100vw] sm:text-3xl
+
+    .contact-input {
+        @apply rounded-full text-2xl border-2 border-white shadow-sm shadow-white
+         bg-transparent mb-5 p-2 text-white max-w-[100vw] sm:text-3xl
     }
-  .skills{
-    @apply rounded-full mr-4 sm:bg-transparent bg-gray-300 inline-block sm:block text-2xl p-1 
-    font-bold
-  }
+
+    .skills {
+        @apply rounded-full mr-4 sm:bg-transparent bg-gray-300 inline-block sm:block 
+        text-2xl p-1 font-bold
+    }
 }
-.fade-in{
-    animation:fade 6s ;
+
+.fade-in {
+    animation: fade 6s;
 }
-@keyframes fade{
-    from{
+
+@keyframes fade {
+    from {
         opacity: 0;
-    }to{
-    opacity: 1;
+    }
+
+    to {
+        opacity: 1;
     }
 }

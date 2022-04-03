@@ -126,7 +126,7 @@ const Jet = () => {
     return (
         <>
             {/*added this div just to use postion relative */}
-            <div role='jet' className='fixed' aria-label='the jet you gonna use to navigate 
+            <div role='jet' className='fixed z-[1] opacity-100' aria-label='the jet you gonna use to navigate 
             the site use the arrow keys or contral buttons or just use tab'
                 tabIndex={2} id="jet" ref={jet}>
                 {/* added div cause Image can't have styles and img don't work*/}
@@ -135,7 +135,7 @@ const Jet = () => {
                         <Image src={jett} />
                     </div>
                 </div>
-                <div id="jetfire" className='absolute hidden top-52 z-[-2] right-12'>
+                <div id="jetfire" className='absolute hidden top-52 right-12'>
                     <Image src={fire} />
                 </div>
                 <style jsx>{`

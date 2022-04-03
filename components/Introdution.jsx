@@ -24,7 +24,7 @@ const Myname = () => {
                 width: innerWidth,
                 height: innerHeight,
                 wireframes: false,
-                background: 'transparent'
+                background: 'blue'
             }
         });
 
@@ -42,8 +42,8 @@ const Myname = () => {
         if (innerWidth > 600) {
             var tipX = innerWidth - 250
             var tipscale = 1
-            var frictionD = 3
-            var torqueD = 0.4
+            var frictionD = 2
+            var torqueD = 0.5
         } else {
             var frictionD = 0
             var torqueD = 0
@@ -51,6 +51,7 @@ const Myname = () => {
             var tipscale = 0.75
         }
         var url
+        var letters = []
         for (var i = 1; i < 27; i++) {
         /*B */    i == 1 || i == 6 || i == 8 ? url = 'https://i.ibb.co/93KcsPy/1.png' : null
          /*A*/   i == 2 || i == 4 || i == 5 || i == 7 || i == 9 ? url = 'https://i.ibb.co/XVWWghW/2.png' : null
@@ -64,9 +65,11 @@ const Myname = () => {
             /*V*/ i == 20 ? url = 'https://i.ibb.co/7CfFfsB/20.png' : null
              /*L*/ i == 22 ? url = 'https://i.ibb.co/T13FtxR/22.png' : null
              /*P*/ i == 24 ? url = 'https://i.ibb.co/JCL187K/24.png' : null
+
             var letter = Matter.Bodies.rectangle((40 + X) * scale, 200 + Y, 80 * scale, 80 * scale, {
-                friction: frictionD,
-                torque: torqueD,
+                friction: 0.1,
+                restitution: 0.5,
+                torque: 2,
                 render: {
                     sprite: {
                         texture: url,
@@ -76,6 +79,7 @@ const Myname = () => {
                 }
             })
 
+            letters.push(letter)
             //space between letters
             X += 70
             Y
@@ -87,9 +91,9 @@ const Myname = () => {
             if (i == 1) {
                 X = 40
             }
-            Matter.World.add(engine.world, letter);
+            Matter.World.add(engine.world, letters[i - 1]);
         }
-        let tip = Matter.Bodies.rectangle(tipX, 100, 80, 80, {
+        let tip = Matter.Bodies.rectangle(tipX, 100, 360, 180, {
             friction: 0.3,
             torque: 0,
             isStatic: true,
@@ -156,13 +160,25 @@ const Myname = () => {
                 }, 100);
             }
         }*/
-        engine.gravity.scale = 0.00001
-        engine.gravity.y = -0.1
-        engine.enableSleeping = true
-        Matter.Sleeping = true
+        engine.gravity.scale = 0
+        engine.gravity.y = 0
+        var enabledgravity = false
+        document.getElementById('enable-gravity').addEventListener('click', () => {
+            if (!enabledgravity) {
+                enabledgravity = true
+                for (var n = 0; n < 26; n++) {
+                    Matter.Body.setStatic(letters[n], false)
+                }
+                engine.gravity.scale = 0.0001
+                engine.gravity.y = 3
+                frictionD = 20
+                Matter.Runner.run(engine)
+                Matter.Render.run(render);
+
+            }
+        })
         Matter.World.add(engine.world, [
             Matter.Bodies.rectangle(width / 2, height * 2, width, height * 2, { isStatic: true }),
-            Matter.Bodies.rectangle(width / 2, -height / 2 + 50, width, height * 0.75, { isStatic: true }),
             Matter.Bodies.rectangle(0 - width / 7, height / 2, width / 4, height, { isStatic: true }),
             Matter.Bodies.rectangle(width + width / 7, height / 2, width / 4, height, { isStatic: true })
         ]);
@@ -181,7 +197,15 @@ const Myname = () => {
     }, []);
 
     return (
-        <div tabIndex={1} id='introduction' className='p-0 m-0 h-fit' aria-label="Baraa Baba frontend developer">
+        <div tabIndex={1} id='introduction' className='p-0 m-0 relative' aria-label="Baraa Baba frontend developer">
+            <div className='bg-gap h-[15rem]'></div>
+            <button id='enable-gravity' className='top-72 left-0 text-white text-3xl bg-transparent border-2 border-white absolute '>
+                enable gravity</button>
+            <style jsx>{`
+                .bg-gap{
+                    background: linear-gradient(transparent 20%,black 30%,blue)  ;
+                }
+                    `}</style>
         </div>
     );
 }
