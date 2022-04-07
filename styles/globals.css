@@ -132,9 +132,12 @@ body {
         text-2xl p-1 font-bold
     }
 }
-
 .fade-in {
     animation: fade 6s;
+}
+.github{
+    background:white;
+    background-image: url(../assets/github-icon.png);
 }
 
 @keyframes fade {

@@ -16,13 +16,17 @@ const Myname = () => {
             Runner = Matter.Runner
         var width = innerWidth
         var height = innerHeight
-
+        if (innerHeight > 600) {
+            var height = innerHeight
+        } else {
+            var height = 600
+        }
         let render = Matter.Render.create({
             element: document.querySelector('#introduction'),
             engine: engine,
             options: {
                 width: innerWidth,
-                height: innerHeight,
+                height: height,
                 wireframes: false,
                 background: 'blue'
             }
@@ -90,7 +94,7 @@ const Myname = () => {
             }
             Matter.World.add(engine.world, letters[i - 1]);
         }
-        let tip = Matter.Bodies.rectangle(tipX, 100, 360, 180, {
+        let tip = Matter.Bodies.rectangle(tipX, 100, 9, 7, {
             friction: 0.3,
             torque: 0,
             isStatic: true,
@@ -160,18 +164,27 @@ const Myname = () => {
         engine.gravity.scale = 0
         engine.gravity.y = 0
         var enabledgravity = false
+        var endedwaiting = true
         document.getElementById('enable-gravity').addEventListener('click', () => {
-            if (!enabledgravity) {
-                enabledgravity = true
-                for (var n = 0; n < 26; n++) {
-                    Matter.Body.setStatic(letters[n], false)
-                }
-                engine.gravity.scale = 0.0001
-                engine.gravity.y = 3
-                frictionD = 20
-                Matter.Runner.run(engine)
-                Matter.Render.run(render);
+            if (endedwaiting) {
+                endedwaiting = false
+                setTimeout(() => { endedwaiting = true }, 3000)
+                if (!enabledgravity) {
+                    document.getElementById('enable-gravity').innerText = 'disable gravity'
+                    enabledgravity = true
+                    engine.gravity.scale = 0.0001
+                    engine.gravity.y = 3
+                    frictionD = 20
 
+                } else {
+                    document.getElementById('enable-gravity').innerText = 'enable gravity'
+                    enabledgravity = false
+                    engine.gravity.scale = 0.0001
+                    engine.gravity.y = -0.003
+                    frictionD = 20
+                    Matter.Runner.run(engine)
+                    Matter.Render.run(render);
+                }
             }
         })
         Matter.World.add(engine.world, [
@@ -196,7 +209,8 @@ const Myname = () => {
     return (
         <div tabIndex={1} id='introduction' className='p-0 m-0 relative' aria-label="Baraa Baba frontend developer">
             <div className='bg-gap h-[15rem]'></div>
-            <button id='enable-gravity' className='bottom-0 left-0 text-white text-3xl bg-transparent border-2 border-white absolute '>
+            <button id='enable-gravity' className='bottom-0 left-0 text-black text-3xl bg-white
+             border-2 border-white absolute '>
                 enable gravity</button>
             <style jsx>{`
                 .bg-gap{

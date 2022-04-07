@@ -139,7 +139,7 @@ const Jet = () => {
                     <Image src={fire} />
                 </div>
                 <style jsx>{`
-            #jet {
+                #jet {
                 transform: translateY(${jetY}px) translateX(${jetX}px) scale(1);
             }
             @media only screen and (max-width: 800px){

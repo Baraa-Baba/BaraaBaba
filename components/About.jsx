@@ -8,7 +8,7 @@ const About = () => {
         text={" I am a freelancer at freelancer.com and mostqel this really helps building my experience."} />
       <Card index={12} img={"md:inline-block"} header='for everyone'
         text={'I care making websites that are accessible on every screen and for all people.'} />
-      <Card index={13} img={"md:block"} header='clean code'
+      <Card index={13} img={"md:block "} header='clean code'
         text={'I care about code being readable and changeable for other developers and me in the future.'} />
 
       <h1 className="text-5xl font-extrabold text-white text-center ">About me</h1>
