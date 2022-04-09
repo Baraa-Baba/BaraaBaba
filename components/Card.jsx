@@ -84,12 +84,12 @@ const Card = ({ img, header, text, links, index }) => {
   return (
     <div tabIndex={index} id="card" ref={Card} aria-label={text} className={`w-[95vw] bg-card 
      mr-0 sm:min-h-[20rem]
-    mt-10 sm:w-[60vw] sm:w-[45vw] p-6 ${img} 
+    mt-10 sm:w-[60vw] p-6 ${img} 
      max-w-[100vw] sm:ml-[3vw] lg:w-[30vw] ml-0 block z-30 lg:inline-block h-fit`}>
       {/*a trick so I can make all cards's height the same*/}
-      <h1 className={`text-white  text-4xl ${header == 'for everyone' && 'pb-3'} typing w-fit mb-5 inline-block`}>
+      <h1 className={`text-white font family text-4xl ${header == 'for everyone' && 'pb-3'} typing w-fit mb-5 inline-block`}>
         {header} </h1>
-      <p aria-hidden className='card-text text-white text-3xl '>
+      <p aria-hidden className='card-text font text-white text-3xl '>
         {typingtext}
         {!typingfinished ? <span className='text-red-800'>|</span> : null}
       </p>

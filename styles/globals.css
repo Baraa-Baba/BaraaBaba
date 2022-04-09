@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
 .smooth {
     transition: all 100ms ease;
 }
@@ -115,7 +115,9 @@ body {
 .bg-card:hover {
     background-size: 200% 200%;
 }
-
+.font{
+    font-family: 'Rubik Moonrocks', cursive;
+}
 @layer components {
 
     .useful-links {
