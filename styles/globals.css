@@ -116,7 +116,7 @@ body {
     background-size: 200% 200%;
 }
 .font{
-    font-family: 'Rubik Moonrocks', cursive;
+    font-family: 'Rubik Moonrocks';
 }
 @layer components {
 
