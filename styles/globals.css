@@ -57,11 +57,11 @@ body {
 
 .conbuttons-cont {
     max-width: 100vw;
-    right: 0;
     position: fixed;
     height: fit-content;
     width: fit-content;
-    bottom: 0;
+    right:0;
+    bottom:0;
 }
 
 .conbuttons {
@@ -131,6 +131,9 @@ body {
         @apply rounded-full mr-4 sm:bg-transparent bg-gray-300 inline-block sm:block 
         text-2xl p-1 font-bold
     }
+    .fast_travel_button{
+        @apply text-4xl md:text-3xl sm:text-2xl block
+    }
 }
 .fade-in {
     animation: fade 6s;
@@ -148,4 +151,8 @@ body {
     to {
         opacity: 1;
     }
+}
+.bg-blur{
+    backdrop-filter: blur(2rem);
+    -webkit-backdrop-filter: blur(2rem);
 }

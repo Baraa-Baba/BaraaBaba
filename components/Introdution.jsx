@@ -172,14 +172,12 @@ const Myname = () => {
                 if (!enabledgravity) {
                     document.getElementById('enable-gravity').innerText = 'disable gravity'
                     enabledgravity = true
-                    engine.gravity.scale = 0.0001
-                    engine.gravity.y = 3
+                    engine.gravity.y = 7
                     frictionD = 20
 
                 } else {
                     document.getElementById('enable-gravity').innerText = 'enable gravity'
                     enabledgravity = false
-                    engine.gravity.scale = 0.0001
                     engine.gravity.y = -0.003
                     frictionD = 20
                     Matter.Runner.run(engine)
@@ -187,6 +185,7 @@ const Myname = () => {
                 }
             }
         })
+        engine.gravity.scale = 0.0001
         Matter.World.add(engine.world, [
             Matter.Bodies.rectangle(width / 2, height * 2, width, height * 2, { isStatic: true }),
             Matter.Bodies.rectangle(0 - width / 7, height / 2, width / 4, height, { isStatic: true }),

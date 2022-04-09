@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import jett from '../assets/jet.png'
+import ContralPanel from './ContralPanel'
 import fire from '../assets/firefromjet.png'
 import { useEffect, useState, useRef } from 'react';
 import ControlButtons from './ControlButtons'
@@ -44,6 +45,7 @@ const Jet = () => {
         document.getElementById('float').style.animation = "unset"
         jet.current.display = 'none'
         const jet_style = getComputedStyle(document.getElementById('jet'))
+
         if (parseInt(jet_style.left) + jetX > 0) {
             setjetX(jetX - 10)
         }
@@ -78,6 +80,7 @@ const Jet = () => {
         document.getElementById('jet-body').style.transform = 'rotate(' + (0) + 'deg)'
         document.getElementById('float').style.animation = "unset"
         const jet_style = getComputedStyle(document.getElementById('jet'))
+
         if (parseInt(jet_style.top) - jetY < 0) {
             setjetY(jetY - 10)
         } else {
@@ -150,6 +153,7 @@ const Jet = () => {
             </div>
             <ControlButtons up={up} jetY={jetY} setjetY={setjetY} jetX={jetX}
                 setjetX={setjetX} />
+            <ContralPanel setjetY={setjetY} />
         </>
     )
 }

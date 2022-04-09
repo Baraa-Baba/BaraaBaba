@@ -88,7 +88,7 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
         )
     }
     return (
-        <div tabIndex={3} role='hold by space so the jet can move or use the arrow keys'
+        <div tabIndex={3} id='control-buttons' role='hold by space so the jet can move or use the arrow keys'
             aria-label='hold by mouse or your finger so the jet can move  or use the arrow keys'
             className='conbuttons-cont z-10'>
             <input type={'button'} value='<' role="up" alt='up' aria-label='up'

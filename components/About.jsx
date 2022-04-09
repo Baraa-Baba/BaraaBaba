@@ -1,7 +1,7 @@
 import Card from "./Card"
 const About = () => {
   return (
-    <div className="max-w-[100vw] mb-10" ref={About}>
+    <div id='about-me' className="max-w-[100vw] mb-10" ref={About}>
       <Card index={4} img={'md:inline-block'} links="none" header={'Baraa'}
         text={"Hi my name is baraa a teen from Lebanon I love programming and I am a self taught frontend developer."} />
       <Card index={5} img={'md:inline-block'} links="GTD" header={'contributor'} text={'I love contributing in open source projects in github and I am active in twitter and dev.to.'} />
