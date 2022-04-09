@@ -78,9 +78,9 @@ const Contralpanel = ({ setjetY }) => {
     }
     return (
         <>
-            <button className='fixed top-[-20px]  left-[-10px] m-0 p-0 z-10' onClick={() => handleshow()}>
+            <button className='fixed top-[-20px]  left-[-10px] m-0 p-0 z-50' onClick={() => handleshow()}>
                 <Image src={control_panel} height='85px' width={'95px'} />  </button>
-            <div id='control-panel' className={`h-[100vh] left-[-500px] w-fit  bg-blur z-10 me fixed top-12 bg-white 
+            <div id='control-panel' className={`h-[100vh] left-[-500px] w-fit  bg-blur z-50 me fixed top-12 bg-white 
             opacity-90 pr-5`}>
                 <button className='text-black  block text-2xl sm:text-4xl' id='show-scroll-bar' onClick={() => handledisplayscrollbar()}>show scroll bar</button>
                 <button id='showcontrolbuttons' className='text-2xl sm:text-4xl'
