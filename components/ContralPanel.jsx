@@ -88,7 +88,7 @@ const Contralpanel = ({ setjetY }) => {
                 <button id='jet-visible' className='text-2xl sm:text-4xl block'
                     onClick={() => jet_visible()}>make jet invisible</button>
                 <div>
-                    <h2 className='text-5xl '>fast travel</h2>
+                    <h2 className='text-5xl font-extrabold text-cyan-400'>fast travel</h2>
                     <button className='fast_travel_button'
                         onClick={() => fast_travel('contact-me')}>Contact me</button>
                     <button className='fast_travel_button'
