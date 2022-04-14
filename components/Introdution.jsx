@@ -28,7 +28,7 @@ const Myname = () => {
                 width: innerWidth,
                 height: height,
                 wireframes: false,
-                background: 'blue'
+                background: 'transparent'
             }
         });
 
@@ -94,20 +94,6 @@ const Myname = () => {
             }
             Matter.World.add(engine.world, letters[i - 1]);
         }
-        let tip = Matter.Bodies.rectangle(tipX, 100, 9, 7, {
-            friction: 0.3,
-            torque: 0,
-            isStatic: true,
-            render: {
-                fillStyle: 'blue',
-                sprite: {
-                    texture: 'https://i.ibb.co/vXmPbMv/Frame-1-1.png',
-                    xScale: tipscale,
-                    yScale: tipscale,
-                }
-            }
-        })
-        Matter.World.add(engine.world, tip);
         window.onresize = () => {
             width = innerWidth
             height = innerHeight
@@ -207,10 +193,13 @@ const Myname = () => {
 
     return (
         <div tabIndex={1} id='introduction' className='p-0 m-0 relative' aria-label="Baraa Baba frontend developer">
-            <div className='bg-gap h-[15rem]'></div>
-            <button id='enable-gravity' className='bottom-0 left-0 text-black text-3xl bg-white
+
+            <button id='enable-gravity' className='top-32 left-0 text-white text-bolder text-3xl 
+            bg-opacity-30 
              border-2 border-white absolute '>
                 enable gravity</button>
+            <div className='sm:text-4xl text-2xl text-white h-32 absolute  right-10 top-0'>tip:drag the letters
+                <br />      tip:use the jet by arrow keys <br /> or use the control buttons to fly(scroll) up</div>
             <style jsx>{`
                 .bg-gap{
                     background: linear-gradient(transparent 20%,black 30%,blue)  ;

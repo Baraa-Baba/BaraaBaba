@@ -12,7 +12,6 @@ export default function App({ loading }) {
       window.scrollTo(0, document.body.clientHeight)
     }, 500)
     setTimeout(() => {
-      window.scrollTo(0, document.body.clientHeight)
     }, 1000)
   }, [loading])
   return <div className="space p-0 m-0">

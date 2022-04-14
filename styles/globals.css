@@ -134,7 +134,7 @@ body {
         text-2xl p-1 font-bold
     }
     .fast_travel_button{
-        @apply text-4xl md:text-3xl sm:text-2xl block hover:text-cyan-400 text-cyan-300 font-bold
+        @apply md:text-4xl text-3xl text-white block font-bold mb-2 hover:text-5xl 
 
     }
 }
