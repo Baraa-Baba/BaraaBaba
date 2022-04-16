@@ -87,13 +87,55 @@ const Card = ({ img, header, text, links, index }) => {
     mt-10 sm:w-[60vw] p-6 ${img} 
      max-w-[100vw] sm:ml-[3vw] lg:w-[30vw] ml-0 block z-30 lg:inline-block h-fit`}>
       {/*a trick so I can make all cards's height the same*/}
-      <h1 className={`text-white font family text-4xl ${header == 'for everyone' && 'pb-3'} typing w-fit mb-5 inline-block`}>
+
+      <h1 data-text={header} className={`text-white sm:text-4xl md:text-2xl lg:text-4xl
+       typing w-fit mb-5 inline-block`}>
         {header} </h1>
+
+
       <p aria-hidden className='card-text font text-white text-3xl '>
         {typingtext}
         {!typingfinished ? <span className='text-red-800'>|</span> : null}
       </p>
       <div className='flex justify-between align-between'>{icons}</div>
+      <style jsx>{`
+      .typing {
+            font-weight:900;
+            text-transform:uppercase;
+            position: relative;
+            white-space: nowrap;
+            max-width: fit-content;
+            display: inline-block;
+            color:transparent;
+            -webkit-text-stroke: 0.1rem white;
+          
+        
+        }
+        .typing::before{
+          content: attr(data-text)  ;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          color: white;
+          border-right: 5px solid white;
+          overflow: hidden;
+          animation: fill 3s alternate linear infinite;
+          animation-delay: 3s;
+        }
+        @keyframes fill{
+         0%{
+            width:0;
+            }
+            50%{
+            width:100%;
+            }
+          100%{
+            width:100%;
+          }
+        }
+        `}</style>
     </div>
   )
 }

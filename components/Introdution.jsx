@@ -192,9 +192,9 @@ const Myname = () => {
     }, []);
 
     return (
-        <div tabIndex={1} id='introduction' className='p-0 m-0 relative' aria-label="Baraa Baba frontend developer">
+        <div tabIndex={1} id='introduction' className='p-0  m-0 relative ' aria-label="Baraa Baba frontend developer">
 
-            <button id='enable-gravity' className='top-32 left-0 text-white text-bolder text-3xl 
+            <button id='enable-gravity' className='top-32 sm:top-16 left-0 text-white text-bolder text-3xl 
             bg-opacity-30 
              border-2 border-white absolute '>
                 enable gravity</button>

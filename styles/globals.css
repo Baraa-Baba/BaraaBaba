@@ -77,21 +77,6 @@ body {
     border-radius: 50%;
 }
 
-.outline-text {
-    -webkit-text-stroke: 2px solid rgb(252, 110, 110);
-
-}
-
-.typing {
-    overflow: hidden;
-    border-right: .15em solid orange;
-    white-space: nowrap;
-    max-width: fit-content;
-    display: inline-block;
-    font-size: 3rem;
-    width: 0;
-    animation: typing 3s infinite alternate-reverse forwards;
-}
 
 @keyframes typing {
     from {
