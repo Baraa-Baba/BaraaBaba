@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import dynamic from 'next/dynamic'
-//import Introdution from '../components/Introdution'
+import Introdution from '../components/Introdution'
 const Jet = dynamic(() => import('../components/jet'))
 const About = dynamic(() => import('../components/About.jsx'))
 const Projects = dynamic(() => import('../components/projects.jsx'))
@@ -27,6 +27,6 @@ export default function App({ loading }) {
     <SocialAccounts />
     <Projects />
     <About />
-    {/*<Introdution />*/}
+    <Introdution />
   </div>;
 }
