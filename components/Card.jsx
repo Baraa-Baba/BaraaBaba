@@ -88,7 +88,7 @@ const Card = ({ img, header, text, links, index }) => {
      max-w-[100vw] sm:ml-[3vw] lg:w-[30vw] ml-0 block z-30 lg:inline-block h-fit`}>
       {/*a trick so I can make all cards's height the same*/}
 
-      <h1 data-text={header} className={`text-white sm:text-4xl md:text-2xl lg:text-4xl
+      <h1 data-text={header} className={`text-white text-4xl sm:text-4xl md:text-2xl lg:text-4xl
        typing w-fit mb-5 inline-block`}>
         {header} </h1>
 

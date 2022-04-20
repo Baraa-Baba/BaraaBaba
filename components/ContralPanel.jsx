@@ -40,10 +40,12 @@ const Contralpanel = ({ setjetY }) => {
         }
     }
     function jet_visible() {
+        document.getElementById('jet').style.transition = 'opacity 4s ease '
         if (isjet_visible) {
             setisjet_visible(false)
             document.getElementById('jet-visible').innerText = 'make jet visible'
-            document.getElementById('jet').style.opacity = '0.1'
+            document.getElementById('jet').style.opacity = '0.01'
+
 
         } else {
             setisjet_visible(true)
@@ -86,6 +88,7 @@ const Contralpanel = ({ setjetY }) => {
             }
         }, 300)
     }
+
     return (
         <>
             <button className='fixed top-[-20px]  left-[-10px] m-0 p-0 z-50' onClick={() => handleshow()}>
@@ -117,5 +120,5 @@ const Contralpanel = ({ setjetY }) => {
         </>
     )
 }
-
 export default Contralpanel;
+
