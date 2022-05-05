@@ -133,6 +133,11 @@ const Contralpanel = ({ setjetY, notcontrolled }) => {
             }, 3000)
         }
     }
+    useEffect(() => {
+        setTimeout(() => {
+            window.scrollTo(0, document.body.clientHeight)
+        }, 10);
+    }, [])
     return (
         <>
             <button className='fixed top-[-20px]  left-[-10px] m-0 p-0 z-50' onClick={() => handleshow()}>

@@ -1,27 +1,19 @@
 import { useEffect } from 'react';
+import Threebg from '../components/ThreeBg.jsx'
 import dynamic from 'next/dynamic';
 import Introdution from '../components/Introdution'
-import * as THREE from 'three'
 const Jet = dynamic(() => import('../components/jet'))
 const About = dynamic(() => import('../components/About.jsx'))
 const Projects = dynamic(() => import('../components/projects.jsx'))
+const ContralPanel = dynamic(() => import('../components/ContralPanel.jsx'))
 const Contact = dynamic(() => import('../components/Contact.jsx'))
-import Threebg from '../components/ThreeBg';
 
 
 export default function App({ loading }) {
-
-
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, document.body.clientHeight)
-    }, 500)
-    setTimeout(() => {
-      window.scrollTo(0, document.body.clientHeight)
-    }, 1000)
-    setTimeout(() => {
-      window.scrollTo(0, document.body.clientHeight)
-    }, 2000)
+    }, 5000)
   }, [loading])
   return <div className=" p-0 m-0">
     <head>
@@ -31,10 +23,11 @@ export default function App({ loading }) {
       <meta name="Description" content="Hi my name is Baraa a frontend developer from lebeneon I love
       programming and learning new things all the time and this is my portfilio website" />
     </head>
+    <Jet />
+    <Threebg />
     <div className='absolute'>
-      <Threebg />
-      <Jet />
       <Contact />
+      <ContralPanel />
       <Projects />
       <About />
       <Introdution />
