@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import Threebg from '../components/ThreeBg.jsx'
 import dynamic from 'next/dynamic';
 import Introdution from '../components/Introdution'
-import Jet from '../components/jet'
-import About from '../components/About.jsx'
-import Projects from '../components/projects.jsx'
-import ContralPanel from '../components/ContralPanel.jsx'
-import Contact from '../components/Contact.jsx'
+const Jet = dynamic(() => import('../components/jet'))
+const About = dynamic(() => import('../components/About.jsx'))
+const Projects = dynamic(() => import('../components/projects.jsx'))
+const ContralPanel = dynamic(() => import('../components/ContralPanel.jsx'))
+const Contact = dynamic(() => import('../components/Contact.jsx'))
 
 
 export default function App({ loading }) {
@@ -25,11 +25,11 @@ export default function App({ loading }) {
       <title>Baraa Baba</title>
       <meta author='baraa baba'></meta>
       <meta name="Description" content="Hi my name is Baraa a frontend developer from Lebanon I love
-      programming and learning new things all the time and this is my portfilio website" />
+      programming and learning new things all the time and this is my portfolio website" />
     </head>
+    <Threebg />
     <div className='absolute'>
       <Jet />
-      <Threebg />
       <Contact />
       <ContralPanel />
       <Projects />
