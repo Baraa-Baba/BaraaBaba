@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Threebg from '../components/ThreeBg.jsx'
+import ThreeBg from '../components/ThreeBg.jsx'
 import dynamic from 'next/dynamic';
 import Introdution from '../components/Introdution'
 const Jet = dynamic(() => import('../components/jet'))
@@ -27,7 +27,7 @@ export default function App({ loading }) {
       <meta name="Description" content="Hi my name is Baraa a frontend developer from Lebanon I love
       programming and learning new things all the time and this is my portfolio website" />
     </head>
-    <Threebg />
+    <ThreeBg />
     <div className='absolute'>
       <Jet />
       <Contact />

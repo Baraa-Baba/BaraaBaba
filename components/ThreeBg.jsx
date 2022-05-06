@@ -56,7 +56,7 @@ const Bulb = props => {
     );
 }
 
-function Threebg() {
+function ThreeBg() {
     useEffect(() => {
         window.onscroll = () => {
             cameraX -= 100
@@ -86,4 +86,4 @@ function Threebg() {
     );
 }
 
-export default Threebg;
+export default ThreeBg;
