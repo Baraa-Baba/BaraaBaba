@@ -138,8 +138,16 @@ const Contralpanel = ({ setjetY, notcontrolled }) => {
             window.scrollTo(0, document.body.clientHeight)
         }, 10);
     }, [])
+
+    function scroll() {
+        window.scrollTo(0, document.body.clientHeight)
+
+    }
     return (
         <>
+            <button className='text-5xl text-white' onClick={
+                () => scroll()
+            }>click</button>
             <button className='fixed top-[-20px]  left-[-10px] m-0 p-0 z-50' onClick={() => handleshow()}>
                 <Image src={control_panel} height='85px' width={'95px'} />  </button>
             <div id='control-panel' className={`h-[100vh] left-[-500px] w-fit  bg-blur z-50 slow-transtion 

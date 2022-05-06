@@ -47,7 +47,6 @@ const Card = ({ img, header, text, links, index }) => {
        typing w-fit mb-5 inline-block`}>
         {header} </h1>
 
-
       <p aria-hidden className='card-text font text-white text-3xl '>
         {text}
       </p>
