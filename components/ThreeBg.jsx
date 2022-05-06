@@ -1,5 +1,5 @@
 import profile from '../assets/threeassets/profile.jpg'
-import { Canvas, useFrame, useThree, extend, useLoader } from 'react-three-fiber'
+import { Canvas, useFrame, useThree, extend, useLoader } from '@react-three/fiber'
 import { Line, Text, useTexture, Stars } from '@react-three/drei';
 import * as THREE from 'three'
 import { useRef, Suspense, useEffect } from 'react'
