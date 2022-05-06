@@ -6,7 +6,17 @@
 .smooth {
     transition: all 100ms ease;
 }
-
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  body::-webkit-scrollbar-track {
+    background: orange;        /* color of the tracking area */
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: blue;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid orange;  /* creates padding around scroll thumb */
+  }
 .me {
     transition: all 2s ease;
 
@@ -30,9 +40,13 @@
         transform: translateY(1rem);
     }
 }
-
+html,body{
+    width: 100%;
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
 html {
-    max-width: 100vw;
     overflow: hidden;
 }
 
