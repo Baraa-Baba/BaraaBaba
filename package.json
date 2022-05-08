@@ -12,7 +12,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/fiber": "^8.0.12",
+    "@react-three/drei": "^9.7.1",
+    "@react-three/fiber": "^8.0.13",
     "@reduxjs/toolkit": "^1.8.0",
     "drie": "^2.0.0",
     "fontawesome": "^5.6.3",
