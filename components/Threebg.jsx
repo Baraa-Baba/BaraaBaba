@@ -86,4 +86,4 @@ function Threebg() {
     );
 }
 
-export default ThreeBg;
+export default Threebg;
