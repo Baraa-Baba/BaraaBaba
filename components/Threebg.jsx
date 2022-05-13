@@ -7,13 +7,13 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 extend({ OrbitControls })
 // react, react three fiber, background, load 360 image
 const deg2rad = degrees => degrees * (Math.PI / 180);
-let cameraX = 0
 const Orbit = () => {
     const { camera, gl } = useThree()
     camera.rotation.set(deg2rad(-30), 0, 0);
-    camera.position.set(cameraX, 6, 6)
+    camera.position.set(0, 0, 0)
     return (
-        <orbitControls args={[camera, gl.domElement]} />
+        <orbitControls makeDefault enablePan={true} enableZoom={true} enableRotate={true}
+            args={[camera, gl.domElement]} />
     );
 }
 
@@ -55,16 +55,18 @@ const Bulb = props => {
         </mesh>
     );
 }
-
 function Threebg() {
-    useEffect(() => {
-        window.onscroll = () => {
-            cameraX -= 100
-        }
-    }, [])
+
     return (
-        <div style={{ height: '100vh', width: '100vw', position: 'fixed' }}>
-            <Canvas linear flat onClick={(e) => console.log('canvas')}>
+        <div >
+            <Canvas style={{
+                maxWidth: '100vw',
+                height: '100vw',
+                width: '100vw',
+                position: 'fixed',
+                top: '0',
+                left: '0',
+            }} linear flat onClick={(e) => console.log('canvas')}>
                 <Stars onClick={(e) => console.log('stars')} />
                 <Suspense fallback={null}>
                     <Background onClick={(e) => console.log('background')} />
