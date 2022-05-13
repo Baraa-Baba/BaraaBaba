@@ -6,7 +6,6 @@ import { useEffect, useState, useRef } from 'react';
 import ControlButtons from './ControlButtons'
 import { createStore } from 'redux'
 const Jet = () => {
-    const [notcontrolled, setnotcontrolled] = useState(true)
     useEffect(() => {
         window.scrollTo(0, document.body.clientHeight)
     }, [])
@@ -42,7 +41,6 @@ const Jet = () => {
     }, [])
     function left() {
         event.preventDefault();
-        setnotcontrolled(false)
         document.getElementById('jet-body').style.transform = 'rotate(' + (-25) + 'deg)'
         document.getElementById('float').style.animation = "unset"
         jet.current.display = 'none'
@@ -53,7 +51,6 @@ const Jet = () => {
         }
     }
     function right() {
-        setnotcontrolled(false)
         event.preventDefault();
         const jet_style = getComputedStyle(document.getElementById('jet'))
         document.getElementById('float').style.animation = "unset"
@@ -64,7 +61,6 @@ const Jet = () => {
     }
     function down() {
         event.preventDefault();
-        setnotcontrolled(false)
         const jet_style = getComputedStyle(document.getElementById('jet'))
         document.getElementById('float').style.animation = "unset"
         document.getElementById('jet-body').style.transform = 'rotate(' + (180) + 'deg)'
@@ -80,7 +76,7 @@ const Jet = () => {
     }
     function up() {
         event.preventDefault()
-        setnotcontrolled(false)
+
         document.getElementById('jet-body').style.transform = 'rotate(' + (0) + 'deg)'
         document.getElementById('float').style.animation = "unset"
         const jet_style = getComputedStyle(document.getElementById('jet'))
@@ -96,6 +92,7 @@ const Jet = () => {
     }
     function onKeyDown(event) {
         if (event.keyCode == 40) {
+            store.dispatch({ type: 'counter/incremented' })
             down()
         }
         if (event.keyCode == 39) {
@@ -156,7 +153,7 @@ const Jet = () => {
             </div>
             <ControlButtons up={up} jetY={jetY} setjetY={setjetY} jetX={jetX}
                 setjetX={setjetX} />
-            <ContralPanel setjetY={setjetY} notcontrolled={notcontrolled} />
+            <ContralPanel setjetY={setjetY} />
         </>
     )
 }

@@ -4,9 +4,8 @@ import LoadingPage from '../components/LoadingPage';
 import Head from 'next/head'
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
+  setTimeout(() => {
     setLoading(false)
-    window.scrollTo(0, document.body.clientHeight)
   }, [])
   return (
     <>
