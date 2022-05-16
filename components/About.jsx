@@ -1,4 +1,5 @@
 import Card from "./Card"
+import { useState } from 'react'
 const About = () => {
   return (
     <div id='about-me' className="max-w-[100vw] mb-10" ref={About}>

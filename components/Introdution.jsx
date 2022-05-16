@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import Matter from './matter.js'
+import { useState } from 'react';
 const Myname = () => {
+    const [state, setstate] = useState('workk dammit');
     useEffect(() => {
         let engine = Matter.Engine.create();
         var Play = Play || {};
@@ -70,7 +72,7 @@ const Myname = () => {
              /*L*/ i == 22 ? url = 'https://i.ibb.co/T13FtxR/22.png' : null
              /*P*/ i == 24 ? url = 'https://i.ibb.co/JCL187K/24.png' : null
 
-            var letter = Matter.Bodies.rectangle((40 + X) * scale, 200 + Y, 80 * scale, 80 * scale, {
+            var letter = Matter.Bodies.rectangle((80 + X) * scale, 200 + Y, 80 * scale, 80 * scale, {
                 render: {
                     sprite: {
                         texture: url,
