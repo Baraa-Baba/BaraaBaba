@@ -127,7 +127,39 @@ const Projects = () => {
                                     className="useful-links">CODE</a>
                                 <a target={'about:blank'} href="https://baraa-baba.github.io/React-Pokemon-Pagination/"
                                     className="useful-links">Website</a>
-                                <a target={'about:blank'} href="https://mostaql.com/portfolio/897607" className="useful-links">Arabic description</a>
+                                <a target={'about:blank'} href="https://mostaql.com/portfolio/897576" className="useful-links">Arabic description</a>
+                            </div>}
+                    </div>
+                </div>
+                <div id='Malala yousafzai website' tabIndex={30} className='relative h-[100vh] w-[100vw]'>
+                    <a href="https://baraa-baba.github.io/Malala-Yousafzai/"
+                        target={'about:blank'} className="text-white text-4xl">
+                        Malala yousafzai website </a>
+
+                    <button title='click to see description'
+                        onClick={() => setimageeditor(!imageeditor)}
+                        className="hover-appear text-4xl bg-green-400 ml-5">?</button>
+                    <div className='relative h-[100vh] w-[100vw]'>
+                        <iframe className="relative h-[100vh] w-[100vw]"
+                            src="https://baraa-baba.github.io/Malala-Yousafzai/">
+                            <Image src={imageeditorimg} width={999} height={999} alt='hangman website screenshot' />
+                        </iframe>
+                        {imageeditor &&
+                            <div className='project-desc-cont '>
+                                <h3 className='text-white text-5xl'>Description:</h3>
+                                <p className='project-desc-text'>
+                                    this is website about the story of Malala Yousafzai made it for a school project the parallax effect and slider made by glide js really improves the website
+                                </p>
+                                <h4 className="text-white text-4xl">Skills:</h4>
+                                <p className="text-orange-600 skills">HTML</p>
+                                <p className="text-blue-600 skills">CSS</p>
+                                <p className="text-yellow-800 skills">javascript</p>
+                                <h4 className="text-white text-4xl">Useful links:</h4>
+                                <a target={'about:blank'} href="https://github.com/Baraa-Baba/Malala-Yousafzai"
+                                    className="useful-links">CODE</a>
+                                <a target={'about:blank'} href="https://baraa-baba.github.io/Malala-Yousafzai/"
+                                    className="useful-links">Website</a>
+                                <a target={'about:blank'} href="https://mostaql.com/portfolio/937308" className="useful-links">Arabic description</a>
                             </div>}
                     </div>
                 </div>
