@@ -2,11 +2,11 @@ import '../styles/globals.css'
 import { useEffect, useState } from 'react'
 import LoadingPage from '../components/LoadingPage';
 import Head from 'next/head'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
+  setTimeout(() => {
     setLoading(false)
-    window.scrollTo(0, document.body.clientHeight)
   }, [])
   return (
     <>
