@@ -94,29 +94,33 @@ const Contralpanel = ({ setjetY }) => {
             <button className='fixed top-[-20px]  left-[-10px] m-0 p-0 z-50' onClick={() => handleshow()}>
                 <Image src={control_panel} height='85px' width={'95px'} />  </button>
             <div id='control-panel' className={`h-[100vh] left-[-500px] w-fit  bg-blur z-50 me 
-            fixed top-12 bg-black font-semibold mb-2
+            fixed top-12  font-semibold mb-2
             opacity-90 pr-5`}>
-                <button className='text-white font-semibold  mb-2  block text-2xl sm:text-4xl' id='show-scroll-bar' onClick={() => handledisplayscrollbar()}>show scroll bar</button>
-                <button id='showcontrolbuttons' className='text-2xl mb-2 sm:text-4xl text-white font-semibold '
+                <button className='orange-text font-semibold  mb-2  block text-2xl sm:text-4xl' id='show-scroll-bar' onClick={() => handledisplayscrollbar()}>show scroll bar</button>
+                <button id='showcontrolbuttons' className='text-2xl mb-2 sm:text-4xl orange-text font-semibold '
                     onClick={() => { handlecontrolbuttons() }}>hide control buttons</button>
-                <button id='jet-visible' className='text-2xl sm:text-4xl mb-2 block font-semibold  text-white'
+                <button id='jet-visible' className='text-2xl sm:text-4xl mb-2 block font-semibold  orange-text'
                     onClick={() => jet_visible()}>make jet invisible</button>
                 <div>
                     <h2 className='text-5xl font-extrabold text-white'>fast travel</h2>
-                    <button className='fast_travel_button me'
+                    <button className='fast_travel_button orange-text me'
                         onClick={() => fast_travel('contact-me')}>Contact me</button>
-                    <button className='fast_travel_button me'
-                        onClick={() => fast_travel('hangman-game')}>hangman game</button>
-                    <button className='fast_travel_button me'
-                        onClick={() => fast_travel('to-do-list')}>to do list</button>
-                    <button className='fast_travel_button me'
-                        onClick={() => fast_travel('image-editor')}>image editor</button>
-                    <button className='fast_travel_button me'
+                    <button className='fast_travel_button orange-text me'
+                        onClick={() => fast_travel('projects')}>projects</button>
+                    <button className='fast_travel_button orange-text me'
                         onClick={() => fast_travel('about-me')}>About me</button>
-                    <button className='fast_travel_button me'
+                    <button className='fast_travel_button orange-text me'
                         onClick={() => fast_travel('introduction')}>introduction</button>
                 </div>
             </div>
+            <style jsx>{`
+                #control-panel{
+                    background:rgb(28,94,167);
+                }
+                .orange-text{
+                    color:#F5A42A;
+                }
+                `}</style>
         </>
     )
 }

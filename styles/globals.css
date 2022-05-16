@@ -119,7 +119,7 @@ body {
         text-2xl p-1 font-bold
     }
     .fast_travel_button{
-        @apply md:text-4xl text-3xl text-white block font-bold mb-2 hover:text-5xl 
+        @apply md:text-4xl text-3xl block font-bold mb-2 hover:text-5xl 
     }
     .project-desc-cont{
         @apply w-[95vw] h-[100%] top-0 z-50 left-[2.5vw] absolute bg-opacity-80 bg-black 
