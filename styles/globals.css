@@ -121,11 +121,37 @@ body {
     .fast_travel_button{
         @apply md:text-4xl text-3xl block font-bold mb-2 hover:text-5xl 
     }
+    .project-cont{
+        @apply h-[90vh]  w-[100vw] 
+    }
+    .project-iframe-cont{
+        @apply relative h-[100vh]
+    }
+    .project-iframe{
+        @apply h-[100vh] min-w-[100vw] sm:min-w-[75vw]
+    }
     .project-desc-cont{
         @apply w-[95vw] h-[100%] top-0 z-50 left-[2.5vw] absolute bg-opacity-80 bg-black 
     }
     .project-desc-text{
         @apply text-white text-3xl max-w-[100vw] w-[40rem] mx-auto
+    }
+    @media (max-width: 640px) {
+    #margin_0{
+        margin: 0 0 0 0;
+    }
+    #margin_00{
+        margin: 0 0 0 0;
+    }
+    #margin_000{
+        margin: 0 0 0 0;
+    }
+    #margin_0000{
+        margin: 0 0 0 0;
+    }
+    #margin_00000{
+        margin: 0 0 0 0;
+    }  
     }
 }
 .fade-in {
