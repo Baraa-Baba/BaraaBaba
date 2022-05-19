@@ -33,7 +33,7 @@ const Projects = () => {
                         <iframe id='margin_000' className="project-iframe"
                             src="https://baraa-baba.github.io/hangman-game/">
                         </iframe>
-                        {hangman_desc && <div className='project-desc-cont'>
+                        {hangman_desc && <div id='margin_1' className='project-desc-cont'>
                             <h3 className='text-white text-5xl'>Description:</h3>
                             <p className='project-desc-text'>
                                 this is a hangman game that I really enjoyed doing and It hade a lot of conditions like not repeating the same letter and more
@@ -59,7 +59,7 @@ const Projects = () => {
                         <iframe id='margin_00' className="project-iframe"
                             src="https://baraa-baba.github.io/to-do-list/">
                         </iframe>
-                        {todo_desc && <div className='project-desc-cont'>
+                        {todo_desc && <div id='margin_4' className='project-desc-cont'>
                             <h3 className='text-white text-5xl'>Description:</h3>
                             <p className='project-desc-text'>
                                 this is a basic to do list that saves the todos into local storage I have done it a while ago and may make it more advance in the future.
@@ -89,7 +89,7 @@ const Projects = () => {
                             src="https://baraa-baba.github.io/image-editor/">
                         </iframe>
                         {imageeditor &&
-                            <div className='project-desc-cont'>
+                            <div id='margin_3' className='project-desc-cont'>
                                 <h3 className='text-white text-5xl'>Description:</h3>
                                 <p className='project-desc-text'>
                                     This is an image editor that I really enjoy doing it really taught me a lot of stuff about images most importantly aspect ratio
@@ -120,7 +120,7 @@ const Projects = () => {
                             <Image src={Pokemonimg} alt='hangman website screenshot' />
                         </iframe>
                         {Pokemon &&
-                            <div className='project-desc-cont '>
+                            <div id='margin_2' className='project-desc-cont '>
                                 <h3 className='text-white text-5xl'>Description:</h3>
                                 <p className='project-desc-text'>
                                     this is not originally my project I took it from web dev simplified and styled it using a css framework called tailwind css and made the user able to change the limit of the Pokémon name in one page.
@@ -153,7 +153,7 @@ const Projects = () => {
                             <Image src={yousafzaiimg} width={999} height={999} alt='hangman website screenshot' />
                         </iframe>
                         {yousafzai &&
-                            <div className='project-desc-cont '>
+                            <div id='margin_1' className='project-desc-cont '>
                                 <h3 className='text-white text-5xl'>Description:</h3>
                                 <p className='project-desc-text'>
                                     this is website about the story of Malala Yousafzai made it for a school project the parallax effect and slider made by glide js really improves the website

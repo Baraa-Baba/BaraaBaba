@@ -131,7 +131,7 @@ body {
         @apply h-[100vh] min-w-[100vw] sm:min-w-[75vw]
     }
     .project-desc-cont{
-        @apply w-[95vw] h-[100%] top-0 z-50 left-[2.5vw] absolute bg-opacity-80 bg-black 
+        @apply min-w-[100vw] m-0 p-0 sm:w-[95vw]  h-[100%] top-0 z-50 left-0 sm:left-[2.5vw] absolute bg-opacity-80 bg-black 
     }
     .project-desc-text{
         @apply text-white text-3xl max-w-[100vw] w-[40rem] mx-auto
@@ -139,18 +139,44 @@ body {
     @media (max-width: 640px) {
     #margin_0{
         margin: 0 0 0 0;
+        padding: 0 0 0 0
     }
     #margin_00{
         margin: 0 0 0 0;
+        padding: 0 0 0 0
     }
     #margin_000{
         margin: 0 0 0 0;
+        padding: 0 0 0 0
     }
     #margin_0000{
         margin: 0 0 0 0;
+        padding: 0 0 0 0
     }
     #margin_00000{
         margin: 0 0 0 0;
+        padding: 0 0 0 0
+    }  
+    
+    #margin_1{
+        margin: 0 0 0 0;
+        padding: 0 0 0 0
+    }  
+    #margin_2{
+        margin: 0 0 0 0;
+        padding: 0 0 0 0
+    }  
+    #margin_3{
+        margin: 0 0 0 0;
+        padding: 0 0 0 0
+    }  
+    #margin_4{
+        margin: 0 0 0 0;
+        padding: 0 0 0 0
+    }  
+    #margin_5{
+        margin: 0 0 0 0;
+        padding: 0 0 0 0
     }  
     }
 }
