@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import hangmanss from '../assets/hangman.png'
 import todolist from '../assets/todolist.png'
 import imageeditorimg from '../assets/imageeditor.png'
+import scrollimage from '../assets/scroll.png'
 
 import Pokemonimg from '../assets/poke-pagnation.png'
 import yousafzaiimg from '../assets/malalaimg.png'
@@ -13,6 +14,7 @@ const Projects = () => {
     const [imageeditor, setimageeditor] = useState(false)
     const [Pokemon, setPokemon] = useState(false);
     const [yousafzai, setyousafzai] = useState(false);
+    const [scrollwebsite, setscrollwebsite] = useState(false)
     const [width, setwidth] = useState(0);
     useEffect(() => {
         setwidth(innerWidth)
@@ -106,44 +108,10 @@ const Projects = () => {
                             </div>}
                     </div>
                 </div>
-                <div id=' react Pokémon pagination' tabIndex={30} className='project-cont'>
-                    <a href="https://baraa-baba.github.io/React-Pokemon-Pagination/"
-                        target={'about:blank'} className="text-white text-4xl">
-                        react Pokémon pagination </a>
-
-                    <button title='click to see description'
-                        onClick={() => setPokemon(!Pokemon)}
-                        className="hover-appear text-4xl bg-green-400 ml-5">?</button>
-                    <div className='project-iframe-cont'>
-                        <iframe id='margin_00000' className="project-iframe"
-                            src="https://baraa-baba.github.io/React-Pokemon-Pagination/">
-                            <Image src={Pokemonimg} alt='hangman website screenshot' />
-                        </iframe>
-                        {Pokemon &&
-                            <div id='margin_2' className='project-desc-cont '>
-                                <h3 className='text-white text-5xl'>Description:</h3>
-                                <p className='project-desc-text'>
-                                    this is not originally my project I took it from web dev simplified and styled it using a css framework called tailwind css and made the user able to change the limit of the Pokémon name in one page.
-                                </p>
-                                <h4 className="text-white text-4xl">Skills:</h4>
-                                <p className="text-orange-600 skills">HTML</p>
-                                <p className="text-blue-600 skills">CSS</p>
-                                <p className="text-yellow-800 skills">javascript</p>
-                                <p className="text-blue-500 skills">react</p>
-                                <h4 className="text-white text-4xl">Useful links:</h4>
-                                <a target={'about:blank'} href="https://github.com/Baraa-Baba/React-Pokemon-Pagination"
-                                    className="useful-links">CODE</a>
-                                <a target={'about:blank'} href="https://baraa-baba.github.io/React-Pokemon-Pagination/"
-                                    className="useful-links">Website</a>
-                                <a target={'about:blank'} href="https://mostaql.com/portfolio/897576" className="useful-links">Arabic description</a>
-                            </div>}
-                    </div>
-                </div>
                 <div id='Malala yousafzai website' tabIndex={30} className='project-cont'>
                     <a href="https://baraa-baba.github.io/Malala-Yousafzai/"
                         target={'about:blank'} className="text-white text-4xl">
                         Malala yousafzai website </a>
-
                     <button title='click to see description'
                         onClick={() => setyousafzai(!yousafzai)}
                         className="hover-appear text-4xl bg-green-400 ml-5">?</button>
@@ -169,6 +137,33 @@ const Projects = () => {
                                     className="useful-links">Website</a>
                                 <a target={'about:blank'} href="https://mostaql.com/portfolio/937308" className="useful-links">Arabic description</a>
                             </div>}
+
+                    </div>
+                </div>
+
+                <div id='3d-project' tabIndex={20} className="project-cont">
+                    <a href="https://baraa-baba.github.io/3d-scroll-portfilio/" target={'about:blank'}
+                        className="text-white text-4xl">3D portfilio website</a>
+                    <button title='click to see description' onClick={() => setscrollwebsite(!scrollwebsite)}
+                        className="text-4xl bg-green-400 ml-5">?</button>
+                    <div className='project-iframe-cont'>
+                        <Image src={scrollimage} />
+                        {scrollwebsite && <div id='margin_4' className='project-desc-cont'>
+                            <h3 className='text-white text-5xl'>Description:</h3>
+                            <p className='project-desc-text'>
+                                I designed this website using three js It is my portfolio with 3d model added in it I really improved my 3d design skill and three js
+                            </p>
+                            <h4 className="text-white text-4xl">Skills:</h4>
+                            <p className="text-orange-600 skills">HTML</p>
+                            <p className="text-blue-600 skills">CSS</p>
+                            <p className="text-yellow-800 skills">javascript</p>
+                            <p className="text-green-400 skills">Three js</p>
+                            <h4 className="text-white text-4xl">Useful links:</h4>
+                            <a target={'about:blank'} href="https://github.com/Baraa-Baba/3d-scroll-portfilio"
+                                className="useful-links">CODE</a>
+                            <a target={'about:blank'} href="https://baraa-baba.github.io/3d-scroll-portfilio/" className="useful-links">Website</a>
+                            <a target={'about:blank'} href="https://mostaql.com/portfolio/967248" className="useful-links">Arabic description</a>
+                        </div>}
                     </div>
                 </div>
             </Carousel>
