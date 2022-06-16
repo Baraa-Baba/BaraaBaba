@@ -4,7 +4,7 @@ import hangmanss from '../assets/hangman.png'
 import todolist from '../assets/todolist.png'
 import imageeditorimg from '../assets/imageeditor.png'
 import scrollimage from '../assets/scroll.png'
-
+import port from '../assets/por.png'
 import Pokemonimg from '../assets/poke-pagnation.png'
 import yousafzaiimg from '../assets/malalaimg.png'
 import { Carousel } from 'react-responsive-carousel';
@@ -14,6 +14,8 @@ const Projects = () => {
     const [imageeditor, setimageeditor] = useState(false)
     const [Pokemon, setPokemon] = useState(false);
     const [yousafzai, setyousafzai] = useState(false);
+    const [portfilio, setportfilio] = useState(false)
+    const [furn, setfurn] = useState(false)
     const [scrollwebsite, setscrollwebsite] = useState(false)
     const [width, setwidth] = useState(0);
     useEffect(() => {
@@ -24,7 +26,79 @@ const Projects = () => {
     }, [])
     return (
         <div id='projects' className="carousel-wrapper text-white z-10" >
+            <h1 className="text-white text-5xl text-center font-bold">projects</h1>
             <Carousel infiniteLoop dynamicHeight={false} >
+
+                <div id='portfolio' tabIndex={14} className='project-cont'>
+                    <a href="https://baraa-baba.vercel.app/"
+                        target={'about:blank'} className="text-white text-4xl">portfilio website</a>
+                    <button title='click to see description' onClick={() => setportfilio(!portfilio)}
+                        className="text-4xl cursor-pointer rounded-full bg-green-400 ml-5">?</button>
+                    {/*this is div is to contain the iframe and overlay so the overlay fits perfectly*/}
+                    <div className='project-iframe-cont'>
+                        <div className='project-image-cont'>
+                            <Image layout='intrinsic' src={port} alt='portfolio website image' />
+                        </div>
+                        {portfilio && <div id='margin_1' className='project-desc-cont'>
+                            <h3 className='text-white text-5xl'>Description:</h3>
+                            <p className='project-desc-text'>
+                                this is my personal portfolio website it is spaced theme the idea is you
+                                can navigate the website using a jet there is a lot of things
+                                in it and I will always improve it always .
+
+                            </p>
+                            <h4 className="text-white text-4xl">Skills:</h4>
+                            <p className="text-orange-600 skills">HTML</p>
+                            <p className="text-blue-600 skills">CSS</p>
+                            <p className="text-blue-400 skills">react</p>
+                            <p className="text-blue-700 skills">Tailwind css</p>
+                            <p className="text-white skills">Next</p>
+                            <p className="text-yellow-800 skills">javascript</p>
+
+                            <h4 className="text-white text-4xl">Useful links:</h4>
+                            <a target={'about:blank'} href='https://baraa-baba.vercel.app/' className="useful-links">Website</a>
+                            <a target={'about:blank'} href='https://github.com/Baraa-Baba/portfolio-website' className="useful-links">CODE</a>
+                            <a target={'about:blank'} href='https://mostaql.com/portfolio/926084' className="useful-links">Arabic description</a>
+                            <a target={'about:blank'} href='https://dev.to/baraa_baba/the-start-of-my-portfolio-website-519l' className="useful-links">Blog</a>
+                        </div>}
+                    </div>
+                </div>
+
+                <div id='furn' tabIndex={14} className='project-cont'>
+                    <a href="https://furn-eight.vercel.app/"
+                        target={'about:blank'} className="text-white text-4xl">furn website</a>
+                    <button title='click to see description' onClick={() => setfurn(!furn)}
+                        className="text-4xl cursor-pointer rounded-full bg-green-400 ml-5">?</button>
+                    {/*this is div is to contain the iframe and overlay so the overlay fits perfectly*/}
+                    <div className='project-iframe-cont'>
+                        <iframe id='margin_000' className="project-iframe"
+                            src="https://furn-eight.vercel.app/">
+                        </iframe>
+                        {furn && <div id='margin_1' className='project-desc-cont'>
+                            <h3 className='text-white text-5xl'>Description:</h3>
+                            <p className='project-desc-text'>
+                                the role I played :
+                                converted project from HTML to next js it taught we How complicated it is actually to do that
+                                it is not just copy paste I had to change the link, script the comments install libraries instead
+                                of using script etc...
+                                I added the add to cart feature
+                                added cart view mode
+
+                            </p>
+                            <h4 className="text-white text-4xl">Skills:</h4>
+                            <p className="text-orange-600 skills">HTML</p>
+                            <p className="text-blue-600 skills">CSS</p>
+                            <p className="text-blue-400 skills">react</p>
+                            <p className="text-white skills">Next</p>
+                            <p className="text-green-500 skills">Owl carousel  </p>
+                            <p className="text-yellow-800 skills">javascript</p>
+
+                            <h4 className="text-white text-4xl">Useful links:</h4>
+                            <a target={'about:blank'} href='https://furn-eight.vercel.app/' className="useful-links">Website</a>
+                        </div>}
+                    </div>
+                </div>
+
                 <div id='hangman-game' tabIndex={14} className='project-cont'>
                     <a href="https://baraa-baba.github.io/hangman-game/"
                         target={'about:blank'} className="text-white text-4xl">hangman game</a>
@@ -52,34 +126,7 @@ const Projects = () => {
                         </div>}
                     </div>
                 </div>
-                <div id='to-do-list' tabIndex={20} className="project-cont">
-                    <a href="https://baraa-baba.github.io/to-do-list/" target={'about:blank'}
-                        className="text-white text-4xl">To do list</a>
-                    <button title='click to see description' onClick={() => settodo_desc(!todo_desc)}
-                        className="text-4xl bg-green-400 ml-5">?</button>
-                    <div className='project-iframe-cont'>
-                        <iframe id='margin_00' className="project-iframe"
-                            src="https://baraa-baba.github.io/to-do-list/">
-                        </iframe>
-                        {todo_desc && <div id='margin_4' className='project-desc-cont'>
-                            <h3 className='text-white text-5xl'>Description:</h3>
-                            <p className='project-desc-text'>
-                                this is a basic to do list that saves the todos into local storage I have done it a while ago and may make it more advance in the future.
-                            </p>
-                            <h4 className="text-white text-4xl">Skills:</h4>
-                            <p className="text-orange-600 skills">HTML</p>
-                            <p className="text-blue-600 skills">CSS</p>
-                            <p className="text-yellow-800 skills">javascript</p>
-                            <p className="text-blue-400 skills">jQuery</p>
-                            <h4 className="text-white text-4xl">Useful links:</h4>
-                            <a target={'about:blank'} href="https://github.com/Baraa-Baba/to-do-list"
-                                className="useful-links">CODE</a>
-                            <a target={'about:blank'} href="https://baraa-baba.github.io/to-do-list/" className="useful-links">Website</a>
-                            <a target={'about:blank'} href="https://mostaql.com/portfolio/897566" className="useful-links">Arabic description</a>
-                        </div>}
-                    </div>
 
-                </div>
                 <div id='image-editor' tabIndex={30} className='project-cont'>
                     <a href="https://baraa-baba.github.io/image-editor/" target={'about:blank'} className="text-white text-4xl">image editor</a>
 
@@ -167,7 +214,6 @@ const Projects = () => {
                     </div>
                 </div>
             </Carousel>
-            <h1 className="text-white text-5xl text-center font-bold">projects</h1>
         </div >
     )
 }
