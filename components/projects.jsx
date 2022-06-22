@@ -79,10 +79,10 @@ const Projects = () => {
                             <p className='project-desc-text'>
                                 the role I played :
                                 converted project from HTML to next js it taught we How complicated it is actually to do that
-                                it is not just copy paste I had to change the link, script the comments install libraries instead
-                                of using script etc...
+                                 I had to change the link, script the comments install libraries instead
+                                of using script etc... also
                                 I added the add to cart feature
-                                added cart view mode
+                                added cart view mode and developed admin page that genrate json and used that json data to add products and blog and moree...
 
                             </p>
                             <h4 className="text-white text-4xl">Skills:</h4>
