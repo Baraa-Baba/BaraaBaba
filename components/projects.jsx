@@ -5,8 +5,7 @@ import todolist from '../assets/todolist.png'
 import imageeditorimg from '../assets/imageeditor.png'
 import scrollimage from '../assets/scroll.png'
 import port from '../assets/por.png'
-import Pokemonimg from '../assets/poke-pagnation.png'
-import yousafzaiimg from '../assets/alaimg.png'
+import Pokemonimg from '../assets/poke-pagnation.png' 
 import { Carousel } from 'react-responsive-carousel';
 const Projects = () => {
     const [hangman_desc, sethangman_desc] = useState(false)
