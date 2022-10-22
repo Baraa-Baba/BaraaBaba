@@ -204,6 +204,9 @@ const Myname = () => {
                 .bg-gap{
                     background: linear-gradient(transparent 20%,black 30%,blue)  ;
                 }
+                #introduction{
+                height:700vh;
+                }
                     `}</style>
         </div>
     );
