@@ -8,9 +8,7 @@ const About = () => {
       <Card index={9} img={"md:inline-block"} links="FM" header={'freelancer'}
         text={" I am a freelancer at freelancer.com and mostqel this really helps building my experience."} />
       <Card index={12} img={"md:inline-block"} header='for everyone'
-        text={'I care making websites that are accessible on every screen and for all people.'} />
-      <Card index={13} img={"md:block "} header='clean code'
-        text={'I care about code being readable and changeable for other developers and me in the future.'} />
+        text={'I care making websites that are accessible on every screen and for all people.'} /> 
 
       <h1 className="text-5xl font-extrabold text-white text-center ">About me</h1>
     </div>
