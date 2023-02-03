@@ -188,8 +188,10 @@ const Myname = () => {
 
         Matter.World.add(engine.world, mouseConstraint);
         Matter.Runner.run(engine)
-        Matter.Render.run(render);
-        alert('created')
+        Matter.Render.run(render); 
+        setTimeout(()=>{
+            window.scrollTo(0, document.body.clientHeight) 
+        },1000)
     }, []);
 
     return (
