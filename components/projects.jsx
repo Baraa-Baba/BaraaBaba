@@ -41,9 +41,9 @@ const Projects = () => {
                         {portfilio && <div id='margin_1' className='project-desc-cont'>
                             <h3 className='text-white text-5xl'>Description:</h3>
                             <p className='project-desc-text'>
-                                this is my personal portfolio website it is spaced theme the idea is you
-                                can navigate the website using a jet there is a lot of things
-                                in it and I will always improve it always .
+                               My personal portfolio website showcases my skills and experience through a unique, space-themed design. 
+                               The website is navigated via a visually engaging jet  it is constantly evolving platform is dedicated to demonstrating my expertise and capabilities in these technologies. 
+                               I am committed to continually improving the website and its contents, as a representation of my passion for web development and                                        dedication to my craft.
 
                             </p>
                             <h4 className="text-white text-4xl">Skills:</h4>
@@ -76,13 +76,7 @@ const Projects = () => {
                         {furn && <div id='margin_1' className='project-desc-cont'>
                             <h3 className='text-white text-5xl'>Description:</h3>
                             <p className='project-desc-text'>
-                                the role I played :
-                                converted project from HTML to next js it taught we How complicated it is actually to do that
-                                 I had to change the link, script the comments install libraries instead
-                                of using script etc... also
-                                I added the add to cart feature
-                                added cart view mode and developed admin page that genrate json and used that json data to add products and blog and moree...
-
+                               The website is a dynamic platform designed using HTML and CSS, and later converted to Next.js. The implementation of the add-to-cart feature and cart view mode enhances the user experience. Additionally, the development of an admin page that generates JSON data enables efficient management of products, making it easier for users to browse and purchase products
                             </p>
                             <h4 className="text-white text-4xl">Skills:</h4>
                             <p className="text-orange-600 skills">HTML</p>
@@ -166,7 +160,7 @@ const Projects = () => {
                         {scrollwebsite && <div id='margin_4' className='project-desc-cont'>
                             <h3 className='text-white text-5xl'>Description:</h3>
                             <p className='project-desc-text'>
-                                I designed this website using three js It is my portfolio with 3d model added in it I really improved my 3d design skill and three js
+                                I designed my this website using Three.js, incorporating a 3D model to demonstrate my skills in this area. Through this project, I greatly improved my 3D design skills and proficiency in Three.js. The website serves as a testament to my technical abilities and creativity, showcasing my ability to produce dynamic, visually engaging designs.
                             </p>
                             <h4 className="text-white text-4xl">Skills:</h4>
                             <p className="text-orange-600 skills">HTML</p>
