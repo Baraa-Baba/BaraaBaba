@@ -6,14 +6,7 @@ const About = dynamic(() => import('../components/About.jsx'))
 const Projects = dynamic(() => import('../components/projects.jsx'))
 const Contact = dynamic(() => import('../components/Contact.jsx'))
 const SocialAccounts = dynamic(() => import('../components/SocialAccounts'))
-export default function App({ loading }) {
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo(0, document.body.clientHeight)
-    }, 500)
-    setTimeout(() => {
-    }, 1000)
-  }, [loading])
+export default function App({ loading }) { 
   return <div className="space p-0 m-0">
     <head>
       <meta name="google-site-verification" content="Pp6HCNnRnfSMweHewGJ8XIWEwCJ_cGOiDa2aOQAKC7w" />
