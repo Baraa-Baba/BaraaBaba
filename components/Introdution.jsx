@@ -3,6 +3,12 @@ import Matter from './matter.js'
 const Myname = () => {
     useEffect(() => {
         let engine = Matter.Engine.create();
+        Matter.Events.on(engine, "load", function() {  
+        setTimeout(()=>{
+            window.scrollTo(0, document.body.clientHeight) 
+        },100)
+         });
+
         var Play = Play || {};
         var Engine = Matter.Engine,
 
