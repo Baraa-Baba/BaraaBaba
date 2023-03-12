@@ -6,13 +6,29 @@ import freelancericon from '../assets/icons/freelancer_com.jpg'
 import mostqelicon from '../assets/icons/mostqel.png'
 import { useEffect, useState, useMemo, useRef } from 'react'
 const Card = ({ img, header, text, links, index }) => {
+  const [isInstant,setisInstant]=useState(1)
   const [typingtext, settypingtext] = useState()
+  const [isMobile,setIsmobile]=useState(false)
   const [typingfinished, settypingfinished] = useState(false)
   const [icons, seticons] = useState()
   const [runedfunc, setrunedfunc] = useState(false)
   var typingtextC = ''
+  useEffect(()=>{
+    //if mobile we remove the typing effect
+    if(window.innerWidth<860){
+      setisInstant(0)
+      setIsmobile(true)
+      type()
+    }else{
+      setisInstant(0)
+      setIsmobile(false)
+    }
+  },[])
   function type() {
-    if (!runedfunc) {
+    if(!runedfunc&&isMobile){
+      settypingtext(text)
+    }
+    if (!runedfunc&&!isMobile) {
       setrunedfunc(true)
       for (var i = 0; i < text.length; i++) {
         setTimeout(() => {
@@ -49,7 +65,7 @@ const Card = ({ img, header, text, links, index }) => {
           }
           typingtextC += text[i]
           settypingtext(typingtextC)
-        }, 50 * i)
+        }, 50 * i*isInstant)
       }
     }
   }

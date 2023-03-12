@@ -116,7 +116,7 @@ body {
 
     .skills {
         @apply rounded-full mr-4  bg-gray-800  inline-block p-2
-        text-2xl  font-bold
+        lg:text-2xl  font-bold  
     }
     .fast_travel_button{
         @apply md:text-4xl text-3xl block font-bold mb-2 hover:text-5xl 
@@ -135,7 +135,7 @@ body {
         absolute bg-opacity-80 bg-black 
     }
     .project-desc-text{
-        @apply text-white text-3xl max-w-[100vw] w-[60rem] mx-auto font-semibold
+        @apply text-white lg:text-3xl max-w-[100vw] w-[60rem] mx-auto font-semibold 
     }
     .project-image-cont{
         @apply w-[90vw] mx-auto

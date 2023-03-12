@@ -30,7 +30,7 @@ const Contact = () => {
         }
     }, [Contact_ref, options])
     return (
-        <div ref={Contact_ref} id='contact-me' className="container min-h-[25rem] h-[70vh] relative  z-10
+        <div ref={Contact_ref} id='contact-me' className="container p-[4rem] min-h-[25rem] h-[70vh] relative  z-10
          bg-transparent mb-40">
             <div className={`${animation} absolute left-[-200px]`}>
                 <h1 className="text-5xl text-white font-bold mb-5">Contact Me</h1>
