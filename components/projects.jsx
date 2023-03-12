@@ -5,6 +5,12 @@ import todolist from '../assets/todolist.png'
 import imageeditorimg from '../assets/imageeditor.png'
 import scrollimage from '../assets/scroll.png'
 import port from '../assets/por.png'
+import furnWebsite from '../assets/portfilioProjectsImages/furnWebsite.png'
+import portfilioWebsite from '../assets/portfilioProjectsImages/portfilioWebsite.png'
+import hangmanWebsite from '../assets/portfilioProjectsImages/hangmanWebsite.png'
+import the3dWebsite from '../assets/portfilioProjectsImages/3dWebsite.png'
+import ImageEditorWebsite from '../assets/portfilioProjectsImages/imageEditor.png'
+import spacePortfiliodesktop from '../assets/spacePortfiliodesktop.png'
 import Pokemonimg from '../assets/poke-pagnation.png' 
 import { Carousel } from 'react-responsive-carousel';
 const Projects = () => {
@@ -15,13 +21,24 @@ const Projects = () => {
     const [yousafzai, setyousafzai] = useState(false);
     const [portfilio, setportfilio] = useState(false)
     const [furn, setfurn] = useState(false)
+    const [isMobile,setIsMobile]=useState(false)
     const [scrollwebsite, setscrollwebsite] = useState(false)
     const [width, setwidth] = useState(0);
-    useEffect(() => {
-        setwidth(innerWidth)
-        window.addEventListener('resize', (() => {
-            setwidth(innerWidth)
-        }))
+    useEffect(() => { 
+    function handleResize() {
+        setIsMobile(window.innerWidth <= 860);
+      }
+  
+      // Add event listener for window resize
+      window.addEventListener('resize', handleResize);
+  
+      // Call handleResize initially to set the initial state
+      handleResize();
+  
+      // Remove event listener on cleanup
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
     }, [])
     return (
         <div id='projects' className="carousel-wrapper text-white z-10" >
@@ -36,7 +53,9 @@ const Projects = () => {
                     {/*this is div is to contain the iframe and overlay so the overlay fits perfectly*/}
                     <div className='project-iframe-cont'>
                         <div className='project-image-cont'>
-                            <Image layout='intrinsic' src={port} alt='portfolio website image' />
+                          {!isMobile ?  <Image layout='intrinsic' src={port} alt='portfolio website image' />
+                          :<Image layout='fill' src={portfilioWebsite} alt='portfolio website image' />
+                          }
                         </div>
                         {portfilio && <div id='margin_1' className='project-desc-cont'>
                             <h3 className='text-white text-5xl'>Description:</h3>
@@ -70,9 +89,10 @@ const Projects = () => {
                         className="text-4xl cursor-pointer rounded-full bg-green-400 ml-5">?</button>
                     {/*this is div is to contain the iframe and overlay so the overlay fits perfectly*/}
                     <div className='project-iframe-cont'>
-                        <iframe id='margin_000' className="project-iframe"
+                      {!isMobile?  <iframe id='margin_000' className="project-iframe"
                             src="https://furn-eight.vercel.app/">
-                        </iframe>
+                        </iframe>: <Image layout='fill' src={furnWebsite} />
+                        }
                         {furn && <div id='margin_1' className='project-desc-cont'>
                             <h3 className='text-white text-5xl'>Description:</h3>
                             <p className='project-desc-text'>
@@ -99,9 +119,9 @@ const Projects = () => {
                         className="text-4xl cursor-pointer rounded-full bg-green-400 ml-5">?</button>
                     {/*this is div is to contain the iframe and overlay so the overlay fits perfectly*/}
                     <div className='project-iframe-cont'>
-                        <iframe id='margin_000' className="project-iframe"
+                    {!isMobile ?    <iframe id='margin_000' className="project-iframe"
                             src="https://baraa-baba.github.io/hangman-game/">
-                        </iframe>
+                        </iframe> : <Image layout='fill' src={hangmanWebsite} />}
                         {hangman_desc && <div id='margin_1' className='project-desc-cont'>
                             <h3 className='text-white text-5xl'>Description:</h3>
                             <p className='project-desc-text'>
@@ -127,9 +147,9 @@ const Projects = () => {
                         onClick={() => setimageeditor(!imageeditor)}
                         className="hover-appear text-4xl bg-green-400 ml-5">?</button>
                     <div className='project-iframe-cont'>
-                        <iframe id='margin_0' className="project-iframe"
+                       {!isMobile ? <iframe id='margin_0' className="project-iframe"
                             src="https://baraa-baba.github.io/image-editor/">
-                        </iframe>
+                        </iframe>: <Image layout='fill' src={ImageEditorWebsite} />}
                         {imageeditor &&
                             <div id='margin_3' className='project-desc-cont'>
                                 <h3 className='text-white text-5xl'>Description:</h3>
@@ -156,7 +176,8 @@ const Projects = () => {
                     <button title='click to see description' onClick={() => setscrollwebsite(!scrollwebsite)}
                         className="text-4xl bg-green-400 ml-5">?</button>
                     <div className='project-iframe-cont'>
-                        <Image src={scrollimage} />
+                       {!isMobile ? <Image src={spacePortfiliodesktop} />:
+                       <Image src={the3dWebsite}  layout='fill' />}
                         {scrollwebsite && <div id='margin_4' className='project-desc-cont'>
                             <h3 className='text-white text-5xl'>Description:</h3>
                             <p className='project-desc-text'>

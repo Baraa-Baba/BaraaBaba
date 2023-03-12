@@ -90,7 +90,7 @@ const ControlButtons = ({ up, setjetY, jetY, jetX, setjetX }) => {
     return (
         <div tabIndex={3} id='control-buttons' role='hold by space so the jet can move or use the arrow keys'
             aria-label='hold by mouse or your finger so the jet can move  or use the arrow keys'
-            className='conbuttons-cont z-10'>
+            className='conbuttons-cont z-[10000000]'>
             <input type={'button'} value='<' role="up" alt='up' aria-label='up'
                 onMouseDown={(event) => repeatup(event)} onMouseUp={() => {
                     clearInterval(upiv)

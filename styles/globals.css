@@ -122,10 +122,13 @@ body {
         @apply md:text-4xl text-3xl block font-bold mb-2 hover:text-5xl 
     }
     .project-cont{
-        @apply h-[90vh]  w-[100vw] 
+        @apply h-[632px]  w-[100vw] 
     }
     .project-iframe-cont{
-        @apply relative min-h-[100vh]
+        @apply relative min-h-[100vh] 
+    }
+    .project-iframe-cont{
+        height:80vh
     }
     .project-iframe{
         @apply min-h-[200vh] min-w-[100vw] sm:min-w-[75vw]
@@ -138,7 +141,7 @@ body {
         @apply text-white lg:text-3xl max-w-[100vw] w-[60rem] mx-auto font-semibold 
     }
     .project-image-cont{
-        @apply w-[90vw] mx-auto
+        @apply w-[90vw] mx-auto h-[90vh]
     }
     @media (max-width: 640px) {
     #margin_0{
