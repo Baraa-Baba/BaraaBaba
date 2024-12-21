@@ -1,26 +1,14 @@
 import Image from 'next/image'
-import jett from '../assets/jet.png'
+import jetImage from '../assets/jet.png'
 import ContralPanel from './ContralPanel'
 import fire from '../assets/firefromjet.png'
 import { useEffect, useState, useRef } from 'react';
-import ControlButtons from './ControlButtons'
-import { createStore } from 'redux'
+import ControlButtons from './ControlButtons' 
+
 const Jet = () => {
     useEffect(() => {
         window.scrollTo(0, document.body.clientHeight)
-    }, [])
-    function counterReducer(state = { value: 0 }, action) {
-        switch (action.type) {
-            case 'counter/incremented':
-                return { value: state.value + 1 }
-            case 'counter/decremented':
-                return { value: state.value - 1 }
-            default:
-                return state
-        }
-    }
-    let store = createStore(counterReducer)
-    store.subscribe(() => console.log(store.getState()))
+    }, [])  
     const [jetX, setjetX] = useState(0)
     const [jetY, setjetY] = useState(0)
     const jet = useRef(null)
@@ -38,87 +26,79 @@ const Jet = () => {
             setjetX(0)
             setjetY(150)
         }
-    }, [])
-    function left() {
-        event.preventDefault();
-        document.getElementById('jet-body').style.transform = 'rotate(' + (-25) + 'deg)'
-        document.getElementById('float').style.animation = "unset"
-        jet.current.display = 'none'
-        const jet_style = getComputedStyle(document.getElementById('jet'))
+    }, []) 
+    // function repeatFunctionForSpecificTimes(functionBeingRepeated,numberOfTimesFunctionBeingRepeated,event){
+    //     for(let i=0;i<numberOfTimesFunctionBeingRepeated;i++)
+    //     setTimeout(()=>{
+    //         functionBeingRepeated(event)
+    //     },100*numberOfTimesFunctionBeingRepeated)
+    // }  
 
-        if (parseInt(jet_style.left) + jetX > 0) {
-            setjetX(jetX - 10)
-        }
-    }
-    function right() {
-        event.preventDefault();
-        const jet_style = getComputedStyle(document.getElementById('jet'))
-        document.getElementById('float').style.animation = "unset"
-        document.getElementById('jet-body').style.transform = 'rotate(' + (25) + 'deg)'
-        if (parseInt(jet_style.right) - jetX > 0) {
-            setjetX(jetX + 10)
-        }
-    }
-    function down() {
-        event.preventDefault();
-        const jet_style = getComputedStyle(document.getElementById('jet'))
-        document.getElementById('float').style.animation = "unset"
-        document.getElementById('jet-body').style.transform = 'rotate(' + (180) + 'deg)'
-        if (parseInt(jet_style.bottom) - jetY > 0) {
-            setjetY(jetY + 10)
-        } else {
-            window.scrollBy({
-                top: 10,
-                left: 0,
-            });
-        }
+function triggerControlButtonEvent(direction,event){
+    const ControlButton = document.querySelector(`[aria-label="${direction}"]`);
 
-    }
-    function up() {
-        event.preventDefault()
 
-        document.getElementById('jet-body').style.transform = 'rotate(' + (0) + 'deg)'
-        document.getElementById('float').style.animation = "unset"
-        const jet_style = getComputedStyle(document.getElementById('jet'))
-
-        if (parseInt(jet_style.top) - jetY < 0) {
-            setjetY(jetY - 10)
-        } else {
-            window.scrollBy({
-                top: -10,
-                left: 0,
-            });
+    if (ControlButton) { 
+        const touchStartEvent = new Event(event, {
+            bubbles: true,
+            cancelable: true,
+            composed: true
+        });
+ 
+        ControlButton.dispatchEvent(touchStartEvent);
+         
         }
+} 
+function onKeyDown(event) { 
+  
+    if (event.keyCode === 40) {  
+        triggerControlButtonEvent("down","touchstart");
     }
-    function onKeyDown(event) {
-        if (event.keyCode == 40) {
-            store.dispatch({ type: 'counter/incremented' })
-            down()
+    if (event.keyCode === 39) { 
+        triggerControlButtonEvent("right","touchstart");
+    }
+    if (event.keyCode === 37) { 
+        triggerControlButtonEvent("left","touchstart");
+    }
+    if (event.keyCode === 38) { 
+        triggerControlButtonEvent("up","touchstart");
+    }
+
+ 
+    //document.getElementById('jetfire').style.display = 'block'; 
+}
+
+function onKeyUp(event) {
+    if (event.keyCode === 37 || event.keyCode === 38 || event.keyCode === 39 || event.keyCode === 40) { 
+        if (event.keyCode === 40) {  
+            triggerControlButtonEvent("down",'touchend');
         }
-        if (event.keyCode == 39) {
-            right()
+        if (event.keyCode === 39) { 
+            triggerControlButtonEvent("right",'touchend');
+        }
+        if (event.keyCode === 37) { 
+            triggerControlButtonEvent("left",'touchend');
+        }
+        if (event.keyCode === 38) { 
+            triggerControlButtonEvent("up",'touchend');
         }
 
-        if (event.keyCode == 37) {
-            left()
-        }
 
-        if (event.keyCode == 38) {
-            up()
-        }
+       // document.getElementById('jetfire').style.display = 'none'; 
     }
-    useEffect(() => {
-        document.addEventListener('keydown', onKeyDown);
-        return () => {
-            document.removeEventListener('keydown', onKeyDown);
-        }
-    }, [jetX, jetY])
-    function onKeyUp() {
-        if (event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40) {
-            document.getElementById('jetfire').style.display = 'none'
-            document.getElementById('float').style.animation = "float 3s linear infinite alternate"
-        }
-    }
+}
+
+useEffect(() => {
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('keyup', onKeyUp);
+
+    return () => {
+        document.removeEventListener('keydown', onKeyDown);
+        document.removeEventListener('keyup', onKeyUp);
+    };
+}, [jetX, jetY]);
+ 
+
     useEffect(() => {
         document.addEventListener('keyup', onKeyUp);
         return () => {
@@ -135,7 +115,7 @@ const Jet = () => {
                 {/* added div cause Image can't have styles and img don't work*/}
                 <div id='jet-body' className='me '>
                     <div className='float' id="float">
-                        <Image src={jett} />
+                        <Image src={jetImage} />
                     </div>
                 </div>
                 <div id="jetfire" className='absolute hidden top-52 right-12'>
@@ -151,7 +131,7 @@ const Jet = () => {
             }}
             `}</style>
             </div>
-            <ControlButtons up={up} jetY={jetY} setjetY={setjetY} jetX={jetX}
+            <ControlButtons   jetY={jetY} setjetY={setjetY} jetX={jetX}
                 setjetX={setjetX} />
             <ContralPanel setjetY={setjetY} />
         </>

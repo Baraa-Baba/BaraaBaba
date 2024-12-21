@@ -1,212 +1,236 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+@import url("/assets/fonts/SFNSDisplay-Regular.ttf");
+html[dir="ltr"] p,
+html[dir="ltr"] h1,
+html[dir="ltr"] h2,
+html[dir="ltr"] h3,
+html[dir="ltr"] h4,
+html[dir="ltr"] h5,
+html[dir="ltr"] h6,
+html[dir="ltr"] div,
+html[dir="ltr"] a {
+  font-family: "Nunito Sans", Alexandria !important;
+}
+
 .smooth {
-    transition: all 100ms ease;
+  transition: all 100ms ease;
 }
 
 .me {
-    transition: all 2s ease;
-
+  transition: all 2s ease;
 }
-
+:root {
+  --primary-color: #ff66b2;
+  --secondary-color: #4a0f6f;
+}
 .float {
-    animation: float 3s linear infinite alternate;
+  animation: float 3s linear infinite alternate;
 }
 
 @keyframes float {
-    from {
-        transform: translateY(-1rem);
-    }
+  from {
+    transform: translateY(-1rem);
+  }
 
-    to {
-        transform: translateY(1rem);
-    }
+  to {
+    transform: translateY(1rem);
+  }
 }
-
+@font-face {
+  font-family: "SFNSDisplay";
+  src: url("SFNSDisplay-Regular.ttf") format("truetype");
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-style: normal;
+}
+html,
+body,
+* {
+  font-family: "SFNSDisplay", sans-serif !important;
+}
 html {
-    max-width: 100vw;
-    overflow:hidden
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 body {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .space {
-    background-image: url(../assets/star.svg);
-    background-repeat: 7;
-    background-size: 100vw;
+  background-image: url(../assets/star.svg);
+  background-repeat: 7;
+  background-size: 100vw;
 }
 
 .anim {
-    animation: appear 3s 1;
-    display: block;
+  animation: appear 3s 1;
+  display: block;
 }
 
 @keyframes appear {
-    from {
-        display: none;
-    }
+  from {
+    display: none;
+  }
 
-    to {
-        display: block;
-    }
+  to {
+    display: block;
+  }
 }
 
 .conbuttons-cont {
-    max-width: 100vw;
-    position: fixed;
-    height: fit-content;
-    width: fit-content;
-    right:0;
-    bottom:0;
+  max-width: 100vw;
+  position: fixed;
+  height: fit-content;
+  width: fit-content;
+  right: 0;
+  bottom: 0;
 }
 
 .conbuttons {
-    cursor: pointer;
-    text-align: center;
-    background-color: white;
-    color: blue;
-    width: 4rem;
-    height: 4rem;
-    opacity: 0.4;
-    font-weight: 800;
-    font-size: 3rem;
-    border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  background-color: white;
+  color: blue;
+  width: 4rem;
+  height: 4rem;
+  opacity: 0.4;
+  font-weight: 800;
+  font-size: 3rem;
+  border-radius: 50%;
 }
 
-
 @keyframes typing {
-    from {
-        width: 0
-    }
+  from {
+    width: 0;
+  }
 
-    to {
-        width: 100%
-    }
+  to {
+    width: 100%;
+  }
 }
 
 .bg-card {
-    background-image: url(../assets/about-card2.png);
-    background-size: 100% 100%;
-    object-fit: cover;
-    transition: background-size 3s ease;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-image: url(../assets/about-card2.png);
+  background-size: 100% 100%;
+  object-fit: cover;
+  transition: background-size 3s ease;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .bg-card:hover {
-    background-size: 200% 200%;
+  background-size: 200% 200%;
 }
-.font{
-    font-family: 'Rubik Moonrocks';
+.font {
+  font-family: "Rubik Moonrocks";
 }
 @layer components {
+  .useful-links {
+    @apply text-cyan-500 hover:text-cyan-400 text-3xl inline-block bg-gray-800 mr-10;
+  }
+  .contact-input {
+    @apply rounded-full text-2xl border-2 border-white   
+           bg-transparent mb-5 px-6 py-2  text-white max-w-[100vw] sm:text-3xl active:outline-purple-700 focus:outline-purple-700
+           hover:outline-purple-700;
+  }
 
-    .useful-links {
-        @apply text-cyan-500 hover:text-cyan-400 text-3xl inline-block bg-gray-800 mr-10
+  .skills {
+    @apply rounded-full mr-4  bg-gray-800  inline-block p-2
+        lg:text-2xl  font-bold;
+  }
+  .fast_travel_button {
+    @apply md:text-4xl text-3xl block font-bold mb-2 hover:text-5xl;
+  }
+  .project-cont {
+    @apply h-[632px]  w-[100vw];
+  }
+  .project-iframe-cont {
+    @apply relative min-h-[100vh];
+  }
+  .project-iframe-cont {
+    height: 80vh;
+  }
+  .project-iframe {
+    @apply min-h-[200vh] min-w-[100vw] sm:min-w-[75vw];
+  }
+  .project-desc-cont {
+    @apply min-w-[100vw] m-0 p-0 sm:w-[95vw] min-h-[200vh] top-0 z-50 left-0 sm:left-[2.5vw] 
+        absolute bg-opacity-80 bg-black;
+  }
+  .project-desc-text {
+    @apply text-white lg:text-3xl max-w-[100vw] w-[60rem] mx-auto font-semibold;
+  }
+  .project-image-cont {
+    @apply w-[90vw] mx-auto h-[90vh];
+  }
+  @media (max-width: 640px) {
+    #margin_0 {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+    }
+    #margin_00 {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+    }
+    #margin_000 {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+    }
+    #margin_0000 {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+    }
+    #margin_00000 {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
     }
 
-    .contact-input {
-        @apply rounded-full text-2xl border-2 border-white shadow-sm shadow-white
-         bg-transparent mb-5 p-2 text-white max-w-[100vw] sm:text-3xl
+    #margin_1 {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
     }
-
-    .skills {
-        @apply rounded-full mr-4  bg-gray-800  inline-block p-2
-        lg:text-2xl  font-bold  
+    #margin_2 {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
     }
-    .fast_travel_button{
-        @apply md:text-4xl text-3xl block font-bold mb-2 hover:text-5xl 
+    #margin_3 {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
     }
-    .project-cont{
-        @apply h-[632px]  w-[100vw] 
+    #margin_4 {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
     }
-    .project-iframe-cont{
-        @apply relative min-h-[100vh] 
+    #margin_5 {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
     }
-    .project-iframe-cont{
-        height:80vh
-    }
-    .project-iframe{
-        @apply min-h-[200vh] min-w-[100vw] sm:min-w-[75vw]
-    }
-    .project-desc-cont{
-        @apply min-w-[100vw] m-0 p-0 sm:w-[95vw] min-h-[200vh] top-0 z-50 left-0 sm:left-[2.5vw] 
-        absolute bg-opacity-80 bg-black 
-    }
-    .project-desc-text{
-        @apply text-white lg:text-3xl max-w-[100vw] w-[60rem] mx-auto font-semibold 
-    }
-    .project-image-cont{
-        @apply w-[90vw] mx-auto h-[90vh]
-    }
-    @media (max-width: 640px) {
-    #margin_0{
-        margin: 0 0 0 0;
-        padding: 0 0 0 0
-    }
-    #margin_00{
-        margin: 0 0 0 0;
-        padding: 0 0 0 0
-    }
-    #margin_000{
-        margin: 0 0 0 0;
-        padding: 0 0 0 0
-    }
-    #margin_0000{
-        margin: 0 0 0 0;
-        padding: 0 0 0 0
-    }
-    #margin_00000{
-        margin: 0 0 0 0;
-        padding: 0 0 0 0
-    }  
-    
-    #margin_1{
-        margin: 0 0 0 0;
-        padding: 0 0 0 0
-    }  
-    #margin_2{
-        margin: 0 0 0 0;
-        padding: 0 0 0 0
-    }  
-    #margin_3{
-        margin: 0 0 0 0;
-        padding: 0 0 0 0
-    }  
-    #margin_4{
-        margin: 0 0 0 0;
-        padding: 0 0 0 0
-    }  
-    #margin_5{
-        margin: 0 0 0 0;
-        padding: 0 0 0 0
-    }  
-    }
+  }
 }
 .fade-in {
-    animation: fade 6s;
+  animation: fade 6s;
 }
-.github{
-    background:white;
-    background-image: url(../assets/github-icon.png);
+.github {
+  background: white;
+  background-image: url(../assets/github-icon.png);
 }
-.project-desc-cont{
-    margin: 0 0 0 0 !important
+.project-desc-cont {
+  margin: 0 0 0 0 !important;
 }
 @keyframes fade {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
-.bg-blur{
-    backdrop-filter: blur(2rem);
-    -webkit-backdrop-filter: blur(2rem);
+.bg-blur {
+  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
 }
