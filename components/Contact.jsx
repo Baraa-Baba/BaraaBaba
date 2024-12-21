@@ -50,7 +50,7 @@ const Contact = () => {
                     </div>
                     <div className={`form-group px-0 sm:px-3  `}>
                         <textarea placeholder="Your Message" className="resize-y text-2xl 
-                        max-w-[95vw] w-[30rem] bg-transparent text-white
+                        max-w-[95vw] w-[30rem] bg-transparent text-white p-4
                     border-[1px] border-white"
                             name="message" rows="6" required></textarea>
                     </div>

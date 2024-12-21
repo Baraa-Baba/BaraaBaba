@@ -12,7 +12,8 @@ export default function App({ loading }) {
       <head>
         <title>Baraa El Baba</title>
         <meta author="Baraa El Baba"></meta>
-        
+        <script>history.scrollRestoration = "manual"</script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
     <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300&display=swap" rel="stylesheet"></link>
