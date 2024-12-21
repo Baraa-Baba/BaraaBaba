@@ -14,7 +14,7 @@ export default function App({ loading }) {
         <meta author="Baraa El Baba"></meta>
         
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
     <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300&display=swap" rel="stylesheet"></link>
         <meta
           name="Description"

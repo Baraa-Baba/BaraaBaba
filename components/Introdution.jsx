@@ -243,10 +243,10 @@ const Myname = () => {
       >
        {isGravityEnabled?
         <svg width="100" height="100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="24" cy="36" r="8" stroke="white" stroke-width="2"/>
-          <line x1="16" y1="8" x2="16" y2="24" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <line x1="24" y1="8" x2="24" y2="24" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <line x1="32" y1="8" x2="32" y2="24" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="24" cy="36" r="8" stroke="white" strokeWidth="2"/>
+          <line x1="16" y1="8" x2="16" y2="24" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+          <line x1="24" y1="8" x2="24" y2="24" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+          <line x1="32" y1="8" x2="32" y2="24" stroke="white" strokeWidth="2" strokeLinecap="round"/>
         </svg>
         :
         <svg width="100" height="100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
